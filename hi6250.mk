@@ -233,6 +233,10 @@ PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH) \
     hardware/huawei
 
+# Shims
+PRODUCT_PACKAGES += \
+    libshim_ui
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
