@@ -74,5 +74,8 @@ BOARD_ROOT_EXTRA_FOLDERS += \
     splash2 \
     version
 
+# SELinux
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+
 # Vendor
 VENDOR_SECURITY_PATCH := 2022-01-01 # ANE-LGRP2-OVS 9.1.0.401
