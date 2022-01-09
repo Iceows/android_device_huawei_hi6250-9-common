@@ -73,3 +73,6 @@ BOARD_ROOT_EXTRA_FOLDERS += \
     sec_storage \
     splash2 \
     version
+
+# Vendor
+VENDOR_SECURITY_PATCH := 2022-01-01 # ANE-LGRP2-OVS 9.1.0.401
