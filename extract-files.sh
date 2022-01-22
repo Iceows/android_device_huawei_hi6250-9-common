@@ -66,6 +66,9 @@ function blob_fixup() {
 	vendor/lib*/hw/gralloc.hi6250.so)
 	    "${PATCHELF}" --add-needed "libhidlbase.so" "${2}"
 	    ;;
+	vendor/lib*/libRefocusContrastPosition.so)
+	    "${PATCHELF}" --add-needed "libshim_log.so" "${2}"
+	    ;;
 	vendor/lib*/libcamera_algo.so)
 	    "${PATCHELF}" --add-needed "libshim_ui.so" "${2}"
 	    ;;

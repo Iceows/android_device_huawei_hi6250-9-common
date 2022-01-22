@@ -15,6 +15,13 @@
 //
 
 cc_library_shared {
+    name: "libshim_log",
+    srcs: ["log_shim.cpp"],
+    shared_libs: ["liblog"],
+    vendor: true,
+}
+
+cc_library_shared {
     name: "libshim_ui",
     srcs: ["ui_shim.cpp"],
     shared_libs: ["libui"],

@@ -236,6 +236,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libshim_log \
     libshim_ui
 
 # Thermal
