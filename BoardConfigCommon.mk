@@ -22,6 +22,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := hi6250
 
+# Charger
+BACKLIGHT_PATH := /sys/class/leds/lcd_backlight0/brightness
+
 # Filesystem
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
