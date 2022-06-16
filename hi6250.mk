@@ -200,7 +200,9 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0.vendor
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
+PRODUCT_SOONG_NAMESPACES += \
+    $(COMMON_PATH) \
+    hardware/huawei
 
 # Thermal
 PRODUCT_PACKAGES += \

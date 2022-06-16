@@ -30,6 +30,9 @@ TARGET_COPY_OUT_ODM := odm
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# Hardware
+BOARD_VENDOR := huawei
+
 # HIDL
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
@@ -46,6 +49,9 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x0ff88000 -
 # Kernel Source
 TARGET_KERNEL_CONFIG := merge_hi6250_defconfig
 TARGET_KERNEL_SOURCE := kernel/huawei/hi6250-9
+
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 4096
