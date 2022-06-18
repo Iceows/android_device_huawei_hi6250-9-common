@@ -220,6 +220,9 @@ PRODUCT_PACKAGES += \
     librilutils \
     mploader
 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/init/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.rc
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \

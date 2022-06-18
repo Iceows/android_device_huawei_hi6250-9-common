@@ -432,7 +432,6 @@ vendor/modem/modem_fw/readme.txt
 
 # RIL
 -vendor/bin/hw/rild
-vendor/etc/init/rild.rc
 -vendor/lib/libbalong-ril.so
 -vendor/lib/libbalong-ril-1.so
 -vendor/lib/libcommril.so
