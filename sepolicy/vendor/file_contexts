@@ -10,3 +10,7 @@
 /splash2(/.*)?			u:object_r:splashtwo_file:s0
 /vendor/modem/modem_fw(/.*)?	u:object_r:modem_fw_file:s0
 /version(/.*)?			u:object_r:version_file:s0
+
+# TEE
+/(vendor|system/vendor)/bin/teecd						u:object_r:tee_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.huawei\.hardware\.libteec@2\.0-service	u:object_r:hal_vendor_libteec_default_exec:s0
