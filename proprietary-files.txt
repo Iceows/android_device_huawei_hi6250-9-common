@@ -557,3 +557,7 @@ vendor/etc/native_packages.xml:vendor/etc/native_packages.bin
 # Thermal
 -vendor/lib/hw/thermal.hi6250.so
 -vendor/lib64/hw/thermal.hi6250.so
+
+# VNDK - taken from v28 prebuilts/vndk
+-vendor/lib/libunwindstack_v28.so|44ef7982c51a0685535c385adf1b042a04a96ce0
+-vendor/lib64/libunwindstack_v28.so|0e7b27cb539e50d90ca58ada2612e13084f145eb
