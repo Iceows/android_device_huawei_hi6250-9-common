@@ -26,6 +26,9 @@ ro.kirin.product.platform=hi6250
 ro.config.hw_smart_shrink=true
 ro.comp.chipset_version=Chipset-chicago 9.1.0.6(0B23)
 
+# Logs
+persist.log.tag.hwcomposer=S
+
 # Media
 persist.kirin.media.offload.enable=true
 persist.kirin.media.lowlatency.enable=false
