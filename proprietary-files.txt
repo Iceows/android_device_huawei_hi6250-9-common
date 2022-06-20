@@ -23,8 +23,12 @@ vendor/etc/audio/audio_policy_configuration.xml
 -vendor/lib64/soundfx/liboffloadvisualizer.so
 -vendor/lib64/libhuaweiaudioeffectutil.so
 
-# Bluetooth
+# Bluetooth Config
 vendor/etc/bluetooth/bt_vendor.conf
+
+# Bluetooth HAL - pinned libbt-vendor-hisi.so from ANE-LGRP2-OVS 9.1.0.401
+-vendor/lib/libbt-vendor.so|02afd94b3d428c9100114b8b513f9cd38cb7fd11
+-vendor/lib64/libbt-vendor.so|67c8f432eeed790a8ee79ed59d8978d2ead329e7
 
 # Camera
 -vendor/bin/CameraDaemon
