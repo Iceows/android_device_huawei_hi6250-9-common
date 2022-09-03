@@ -10,6 +10,9 @@ COMMON_PATH := device/huawei/hi6250-9-common
 ## Inherit common vendor blobs
 $(call inherit-product, vendor/huawei/hi6250-9-common/hi6250-9-common-vendor.mk)
 
+## Inherit hardware repo
+$(call inherit-product, hardware/huawei/hardware.mk)
+
 ## Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
