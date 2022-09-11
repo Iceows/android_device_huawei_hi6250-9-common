@@ -41,7 +41,6 @@ vendor/etc/bluetooth/bt_vendor.conf
 -vendor/lib/libBestShot.so
 -vendor/lib/libFaceBeautyMeiwo.so
 -vendor/lib/libHW_BShutter.so
--vendor/lib/libRefocusContrastPosition.so
 -vendor/lib/libSmartAE.so
 -vendor/lib/libVideoDenoise.so
 -vendor/lib/libcamerabuffer.so
@@ -89,7 +88,6 @@ vendor/etc/bluetooth/bt_vendor.conf
 -vendor/lib64/libBestShot.so
 -vendor/lib64/libFaceBeautyMeiwo.so
 -vendor/lib64/libHW_BShutter.so
--vendor/lib64/libRefocusContrastPosition.so
 -vendor/lib64/libSmartAE.so
 -vendor/lib64/libVideoDenoise.so
 -vendor/lib64/libcamera_algo.so
