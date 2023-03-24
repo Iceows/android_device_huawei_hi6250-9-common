@@ -53,7 +53,15 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x0ff88000 --second_offset 0x00e88000 --tags_offset 0x07988000
 
+TARGET_KERNEL_OPTIONAL_LD := true
+KERNEL_SUPPORTS_LLVM_TOOLS := true
 
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+
+# clang-r450784d = Kernel Android 13
+TARGET_KERNEL_CLANG_VERSION := r416183b1
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-$(TARGET_KERNEL_CLANG_VERSION)
 
 # Kernel Source
 TARGET_KERNEL_CONFIG := merge_hi6250_defconfig
