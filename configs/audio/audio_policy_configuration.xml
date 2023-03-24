@@ -25,7 +25,7 @@
         There is one section per audio HW module present on the platform.
         Each module section will contains two mandatory tags for audio HAL “halVersion” and “name”.
         The module names are the same as in current .conf file:
-                “primary”, “A2DP”, “remote_submix”, “USB”
+                “primary”, “remote_submix”, “USB”
         Each module will contain the following sections:
         “devicePorts”: a list of device descriptors for all input and output devices accessible via this
         module.
@@ -132,9 +132,6 @@
             </routes>
 
         </module>
-
-        <!-- A2dp Audio HAL -->
-        <xi:include href="/vendor/etc/a2dp_audio_policy_configuration.xml"/>
 
         <!-- Usb Audio HAL -->
         <xi:include href="/vendor/etc/usb_audio_policy_configuration.xml"/>
