@@ -38,11 +38,11 @@ BOARD_VENDOR := huawei
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(COMMON_PATH)/device_framework_matrix.xml \
+    $(COMMON_PATH)/hidl/vintf/device_framework_matrix.xml \
     vendor/lineage/config/device_framework_matrix.xml
 
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/hidl/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/hidl/vintf/compatibility_matrix.xml
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG := true
@@ -52,6 +52,8 @@ BOARD_KERNEL_CMDLINE := loglevel=4 coherent_pool=512K page_tracker=on slub_min_o
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x0ff88000 --second_offset 0x00e88000 --tags_offset 0x07988000
+
+
 
 # Kernel Source
 TARGET_KERNEL_CONFIG := merge_hi6250_defconfig
@@ -67,7 +69,7 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_BOARD_PLATFORM := hi6250
 
 # Props
-TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/properties/vendor.prop
 
 # Recovery
 BOARD_USES_FULL_RECOVERY_IMAGE := true
