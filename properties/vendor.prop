@@ -88,3 +88,7 @@ ro.config.hw_volte_on=true
 
 # Wifi
 wifi.direct.interface=p2p-dev-wlan0
+
+# A-GPS
+ro.hardware.hisupl=hi1102
+
