@@ -5,21 +5,35 @@
 # Bluetooth
 ro.rfkilldisabled=1
 ro.bt.bdaddr_path=/data/misc/bluedroid/macbt
-bluetooth.device.class_of_device=26,2,12
+
+bluetooth.device.class_of_device=90,2,12
+bluetooth.device.default_name=Huawei hi6250
+bluetooth.le.disable_apcf_extended_features=1
+bluetooth.sco.disable_enhanced_connection=1
+
+bluetooth.profile.asha.central.enabled?=true
 bluetooth.profile.a2dp.source.enabled?=true
 bluetooth.profile.avrcp.target.enabled?=true
+bluetooth.profile.bap.broadcast.assist.enabled?=true
+bluetooth.profile.bap.unicast.client.enabled?=true
 bluetooth.profile.bas.client.enabled?=true
+bluetooth.profile.csip.set_coordinator.enabled?=true
 bluetooth.profile.gatt.enabled?=true
+bluetooth.profile.hap.client.enabled?=true
 bluetooth.profile.hfp.ag.enabled?=true
 bluetooth.profile.hid.device.enabled?=true
 bluetooth.profile.hid.host.enabled?=true
 bluetooth.profile.map.server.enabled?=true
+bluetooth.profile.mcp.server.enabled?=true
 bluetooth.profile.opp.enabled?=true
 bluetooth.profile.pan.nap.enabled?=true
 bluetooth.profile.pan.panu.enabled?=true
 bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
-
+bluetooth.profile.ccp.server.enabled?=true
+bluetooth.profile.vcp.controller.enabled?=true
+# HCI disable commands
+bluetooth.hci.disabled_commands=
 
 # Fastbootd
 ro.fastbootd.available=true
@@ -29,6 +43,10 @@ ro.audio.offload_wakelock=false
 ro.config.hw_music_lp=true
 ro.config.music_lp_vol=true
 ro.hardware.audio.primary=hisi_wrapper
+persist.kirin.media.offload.enable=true
+persist.kirin.media.lowlatency.enable=false
+ro.vendor.config.hw_music_lp=true
+ro.vendor.config.music_lp_vol=true
 
 # Graphics
 ro.opengles.version=196610
@@ -50,11 +68,7 @@ ro.comp.chipset_version=Chipset-chicago 9.1.0.6(15F1)
 # Logs
 persist.log.tag.hwcomposer=S
 
-# Media
-persist.kirin.media.offload.enable=true
-persist.kirin.media.lowlatency.enable=false
-ro.vendor.config.hw_music_lp=true
-ro.vendor.config.music_lp_vol=true
+# Huawei/kirin specific
 persist.kirin.alloc_buffer_sync=true
 persist.kirin.texture_cache_opt=1
 persist.huawei.touch_vsync_opt=1
