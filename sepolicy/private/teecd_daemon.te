@@ -1,0 +1,7 @@
+type teecd_auth, domain, coredomain;
+type teecd_auth_exec, exec_type, file_type, system_file_type;
+init_daemon_domain(teecd_auth)
+
+allow init teecd_auth:process transition;
+
+domain_auto_trans(init, teecd_auth_exec, teecd_auth)

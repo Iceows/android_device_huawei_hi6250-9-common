@@ -1,0 +1,8 @@
+type system_teecd, domain, coredomain;
+type system_teecd_exec, exec_type, file_type, system_file_type;
+init_daemon_domain(system_teecd)
+
+allow init system_teecd:process transition;
+
+domain_auto_trans(init, system_teecd_exec, system_teecd)
+

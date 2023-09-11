@@ -1,0 +1,6 @@
+# TEE
+/system/bin/tee_auth_daemon        u:object_r:teecd_auth_exec:s0
+/system/bin/system_teecd		   u:object_r:system_teecd_exec:s0
+/sys/kernel/tui/c_state		       u:object_r:sysfs:s0
+
+
