@@ -366,6 +366,14 @@ vendor/etc/geoloc.conf
 -vendor/lib64/vendor.huawei.hardware.graphics.displayeffect@1.2.so
 -vendor/lib64/vendor.huawei.hardware.perfgenius@2.0.so
 
+# Perfgenius HAL (use by camera)
+-vendor/lib/hw/vendor.huawei.hardware.perfgenius@2.0-impl.so
+-vendor/lib/libperfhub.so
+-vendor/lib/libperfhub_service.so
+-vendor/lib64/hw/vendor.huawei.hardware.perfgenius@2.0-impl.so
+-vendor/lib64/libperfhub.so
+-vendor/lib64/libperfhub_service.so
+
 # HWComposer - patched to nop some functions
 # (checkPartialUpdate, SetPartialUpdates, CalcLayerMaskRects, CalcComposeRect, CheckRotCapability) to fix HWC itself, random crashes, etc.
 -vendor/lib64/hw/hwcomposer.hi6250.so|708a59318b0d4b2267dddfef87d26cfa0af888eb
