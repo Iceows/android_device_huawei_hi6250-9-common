@@ -7,6 +7,10 @@
 ## Common Path
 COMMON_PATH := device/huawei/hi6250-9-common
 
+# error: overriding commands for target 
+# Fix charger animation conflit
+BUILD_BROKEN_DUP_RULES := true
+
 # Arch
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -112,6 +116,7 @@ BOARD_ROOT_EXTRA_FOLDERS += \
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
 
 # Vendor
 VENDOR_SECURITY_PATCH := 2022-01-01 # ANE-LGRP2-OVS 9.1.0.401
