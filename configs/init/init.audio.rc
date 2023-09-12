@@ -67,21 +67,4 @@ on boot
 	chown system system  /sys/class/dp/power/lcd_power
 	chmod 0660 /sys/class/dp/power/lcd_power
 
-## Property trigger
-#on property:ro.sample=*
-#    write /device/sample/sample_property ${ro.some_property}
-#    chmod 644 /device/sample/sample_device
-
-
-
-## Service definition
-#service sample /system/bin/sample
-#    class main
-#    user root
-#    group system log graphics
-#    socket sample stream 0660 system system
-#    disabled
-#    oneshot
-#    onrestart restart another_service
-
 
