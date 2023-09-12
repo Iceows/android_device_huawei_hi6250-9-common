@@ -77,8 +77,6 @@ vendor/etc/bluetooth/bt_vendor.conf
 -vendor/lib/vendor.huawei.hardware.camera.cfgsvr@1.1.so
 -vendor/lib/vendor.huawei.hardware.camera.factory@1.0.so
 -vendor/lib/vendor.huawei.hardware.graphics.gpucommon@1.0.so
--vendor/lib/vendor.huawei.hardware.graphics.mediacomm@2.0.so
--vendor/lib/vendor.huawei.hardware.graphics.mediacomm@2.1.so
 -vendor/lib/vendor.huawei.hardware.hwfactoryinterface@1.0.so
 -vendor/lib/vendor.huawei.hardware.hwfactoryinterface@1.1.so
 -vendor/lib64/hw/CameraFactoryService.so
@@ -129,8 +127,6 @@ vendor/etc/bluetooth/bt_vendor.conf
 -vendor/lib64/vendor.huawei.hardware.camera.cfgsvr@1.1.so
 -vendor/lib64/vendor.huawei.hardware.camera.factory@1.0.so
 -vendor/lib64/vendor.huawei.hardware.graphics.gpucommon@1.0.so
--vendor/lib64/vendor.huawei.hardware.graphics.mediacomm@2.0.so
--vendor/lib64/vendor.huawei.hardware.graphics.mediacomm@2.1.so
 -vendor/lib64/vendor.huawei.hardware.hwfactoryinterface@1.0.so
 -vendor/lib64/vendor.huawei.hardware.hwfactoryinterface@1.1.so
 
@@ -364,15 +360,25 @@ vendor/etc/geoloc.conf
 -vendor/lib64/vendor.huawei.hardware.graphics.displayeffect@1.0.so
 -vendor/lib64/vendor.huawei.hardware.graphics.displayeffect@1.1.so
 -vendor/lib64/vendor.huawei.hardware.graphics.displayeffect@1.2.so
--vendor/lib64/vendor.huawei.hardware.perfgenius@2.0.so
 
 # Perfgenius HAL (use by camera)
+-vendor/bin/hw/vendor.huawei.hardware.perfgenius@2.0-service
 -vendor/lib/hw/vendor.huawei.hardware.perfgenius@2.0-impl.so
 -vendor/lib/libperfhub.so
 -vendor/lib/libperfhub_service.so
 -vendor/lib64/hw/vendor.huawei.hardware.perfgenius@2.0-impl.so
 -vendor/lib64/libperfhub.so
 -vendor/lib64/libperfhub_service.so
+-vendor/lib64/vendor.huawei.hardware.perfgenius@2.0.so
+
+# Mediacomm HAL (use by camera)
+-vendor/bin/hw/vendor.huawei.hardware.graphics.mediacomm@2.0-service
+-vendor/lib/hw/vendor.huawei.hardware.graphics.mediacomm@2.0-impl.so
+-vendor/lib/vendor.huawei.hardware.graphics.mediacomm@2.0.so
+-vendor/lib/vendor.huawei.hardware.graphics.mediacomm@2.1.so
+-vendor/lib64/hw/vendor.huawei.hardware.graphics.mediacomm@2.0-impl.so
+-vendor/lib64/vendor.huawei.hardware.graphics.mediacomm@2.0.so
+-vendor/lib64/vendor.huawei.hardware.graphics.mediacomm@2.1.so
 
 # HWComposer - patched to nop some functions
 # (checkPartialUpdate, SetPartialUpdates, CalcLayerMaskRects, CalcComposeRect, CheckRotCapability) to fix HWC itself, random crashes, etc.
