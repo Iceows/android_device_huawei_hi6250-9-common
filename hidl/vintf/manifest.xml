@@ -362,13 +362,11 @@
         <name>vendor.huawei.hardware.graphics.mediacomm</name>
         <transport>hwbinder</transport>
         <version>2.0</version>
-        <version>2.1</version>
         <interface>
             <name>IMediaComm</name>
             <instance>default</instance>
         </interface>
         <fqname>@2.0::IMediaComm/default</fqname>
-        <fqname>@2.1::IMediaComm/default</fqname>
 	</hal>
     <hal format="hidl">
         <name>vendor.huawei.hardware.hinetmanager</name>
