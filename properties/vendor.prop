@@ -48,13 +48,120 @@ persist.kirin.media.lowlatency.enable=false
 ro.vendor.config.hw_music_lp=true
 ro.vendor.config.music_lp_vol=true
 
-# Graphics
-ro.opengles.version=196610
-debug.sf.latch_unsignaled=1
-debug.sf.disable_backpressure=1
-debug.hwui.use_partial_updates=false
+# CPU
+persist.sys.cpuset.enable=1
+persist.sys.cpuset.subswitch=250
+persist.sys.iaware.cpuenable=true
+persist.sys.fast_h_duration=2000
+persist.sys.fast_h_max=50
+persist.sys.max_rdh_delay=0
 
-# Huawei
+# Dalvik
+dalvik.vm.heapsize=512m
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=384m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapmaxfree=8m
+dalvik.vm.heapminfree=2m
+
+# Display
+persist.sys.jankenable=true
+debug.hwui.render_dirty_regions=false
+ro.sys.umsdirtyratio=2
+persist.alloc_buffer_sync=true
+persist.texture_cache_opt=1
+debug.sf.latch_unsignaled=1
+debug.sf.enable_gl_backpressure=1
+persist.partial_update_support=1
+persist.rog_feature=1
+debug.renderengine.backend=threaded
+
+# Gralloc
+persist.smart_pool=1
+persist.log.tag.GRALLOC=S
+
+# HWUI
+ro.hwui.texture_cache_size=72
+ro.hwui.texture_cache_flushrate=0.4
+ro.hwui.layer_cache_size=48
+ro.hwui.path_cache_size=32
+ro.hwui.shape_cache_size=2
+ro.hwui.drop_shadow_cache_size=6
+ro.hwui.gradient_cache_size=1
+ro.hwui.text_large_cache_height=1024
+ro.hwui.text_large_cache_width=2048
+ro.hwui.text_small_cache_height=1024
+ro.hwui.text_small_cache_width=1024
+ro.hwui.r_buffer_cache_size=8
+
+# IMS/VOLTE
+ro.config.callinwifi=200,6
+ro.config.hw_volte_on=true
+
+# IR
+config.disable_consumerir=true
+
+# Keymaster
+ro.config.keypasstouser=true
+ro.config.hw_ukey_version=2
+
+# Kernel
+ro.config.enable_rcc=true
+
+# Media
+debug.stagefright.ccodec=0
+media.stagefright.thumbnail.prefer_hw_codecs=true
+
+# MMU
+ro.config.mmu_en=1
+
+# Recovery
+persist.sys.recovery_update=true
+
+# RIL
+ro.config.ipv4.mtu=1400
+bastet.service.enable=true
+ro.config.hw_eccNumUseRplmn=true
+persist.radio.apm_sim_not_pwdn=true
+
+# Screen
+hw.lcd.density=480
+ro.hdmi.service=false
+
+# Sensors
+ro.config.hw_sensorhub=true
+use_sensorhub_labc=false
+
+# Storage
+persist.fw.force_adoptable=true
+
+# SurfaceFlinger
+debug.sf.disable_client_composition_cache=1
+debug.sf.enable_transaction_tracing=false
+debug.sf.predict_hwc_composition_strategy=0
+service.sf.prime_shader_cache=0
+
+# Time
+persist.ai.timedebug.enable=false
+
+# Touch
+ro.config.huawei_smallwindow=0,0,1080,1346
+
+# TUI
+ro.tui.service=true
+
+# USB
+persist.media.usbvoice.enable=true
+persist.media.usbvoice.name=USB-Audio - HUAWEI GLASS
+
+# VR
+ro.vr_display.service=true
+persist.egl.support_vr=1
+
+# Zygote
+zygote.critical_window.minute=10
+
+# Huawei - Platform
 bastet.service.enable=true
 vendor.debug.config.mmu_en=1
 ro.vendor.tui.service=true
@@ -67,24 +174,6 @@ ro.comp.chipset_version=Chipset-chicago 9.1.0.6(15F1)
 
 # Logs
 persist.log.tag.hwcomposer=S
-
-# Huawei/kirin specific
-persist.kirin.alloc_buffer_sync=true
-persist.kirin.texture_cache_opt=1
-persist.huawei.touch_vsync_opt=1
-persist.huawei.touch_move_opt=1
-persist.huawei.touchevent_opt=1
-persist.vendor.cpub_min_freq_skip=1
-persist.vendor.smart_pool=1
-persist.video_player_opt=1
-persist.partial_update_support=1
-persist.skip_lowfreq=1
-
-# Recovery
-persist.sys.recovery_update=true
-
-# VoLTE
-ro.config.hw_volte_on=true
 
 # Wifi
 wifi.direct.interface=p2p-dev-wlan0
