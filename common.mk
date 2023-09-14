@@ -20,6 +20,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 PRODUCT_AAPT_CONFIG := normal xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
+# IME Input
+PRODUCT_PACKAGES += \
+    libjni_latinimegoogle
+    
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@4.0-impl  \

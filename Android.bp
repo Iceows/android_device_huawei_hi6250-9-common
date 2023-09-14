@@ -1,2 +1,21 @@
 soong_namespace {
 }
+
+cc_prebuilt_library_shared {
+    name: "libjni_latinimegoogle",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: ["input/lib/libjni_latinimegoogle.so"],
+        },
+        android_arm64: {
+            srcs: ["input/lib64/libjni_latinimegoogle.so"],
+        },
+    },
+    product_specific: true,
+    compile_multilib: "both",
+    prefer: true,
+    check_elf_files: false,
+}
