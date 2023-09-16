@@ -1,9 +1,12 @@
 #
 # Vendor Blobs for hi6250-common - ANE-LGRP2-OVS 9.1.0.401
+# [ro.build.fingerprint]: [HUAWEI/ANE-LX1/HWANE:9/HUAWEIANE-L01/9.1.0.355C109:user/release-keys]
+# [ro.huawei.build.fingerprint]: [HUAWEI/ANE-LX1/HWANE:9/HUAWEIANE-L01/9.1.0.410C109:user/release-keys]
+# 
 #
 
-# Audio
--vendor/lib64/hw/audio.primary.hisi.so:vendor/lib64/hw/audio.primary.hi6250.so
+# Audio Hardware
+-vendor/lib64/hw/audio.primary.hisi.so:vendor/lib64/hw/audio.primary_hisi.hi6250.so
 -vendor/lib64/libasd.so
 -vendor/lib64/libaudio_custom.so
 -vendor/lib64/libaudiodump.so
@@ -14,8 +17,8 @@
 -vendor/lib64/vendor.huawei.hardware.rtt@1.0.so
 
 # Audio Configs
-vendor/etc/audio/audio_effects.xml
-vendor/etc/audio/audio_policy_configuration.xml
+vendor/etc/audio_effects.xml
+vendor/etc/audio_policy_configuration.xml
 
 # Audio Effects
 -vendor/lib/soundfx/libhuaweiprocessing.so
@@ -268,7 +271,6 @@ vendor/firmware/bfgx_cfg
 vendor/firmware/cr4_asic.bin
 vendor/firmware/cr4_regmem.bin
 vendor/firmware/cr4_regmem_u1.bin
-vendor/firmware/emmc_emer_fw.bin
 vendor/firmware/fw_bcm43455_apsta_hw.bin
 vendor/firmware/fw_bcm43455_hw.bin
 vendor/firmware/fw_bcm43455_test_hw_apsta.bin
@@ -276,9 +278,7 @@ vendor/firmware/hifi_6402.img
 vendor/firmware/hifi_6402_2spk.img
 vendor/firmware/hifi_6402_2wake.img
 vendor/firmware/hifi_6402_tas2smartpa.img
-vendor/firmware/hifi_6402_tas2smartpa_no_wakeup_aec.img
 vendor/firmware/hifi_6402_tas4smartpa.img
-vendor/firmware/hifi_6402_tas4smartpa_no_wakeup_aec.img
 vendor/firmware/isp_bw.elf
 vendor/firmware/isp_dts.img
 vendor/firmware/isp_fw.elf
@@ -363,6 +363,10 @@ vendor/etc/geoloc.conf
 
 # Perfgenius HAL (use by camera)
 -vendor/bin/hw/vendor.huawei.hardware.perfgenius@2.0-service
+vendor/etc/init/vendor.huawei.hardware.perfgenius@2.0-service.rc
+vendor/etc/perfgenius_config.xml
+vendor/etc/perfgenius_event_policy.xml
+vendor/etc/perfgenius_scenario_policy.xml
 -vendor/lib/hw/vendor.huawei.hardware.perfgenius@2.0-impl.so
 -vendor/lib/libperfhub.so
 -vendor/lib/libperfhub_service.so
@@ -373,9 +377,12 @@ vendor/etc/geoloc.conf
 
 # Mediacomm HAL (use by camera)
 -vendor/bin/hw/vendor.huawei.hardware.graphics.mediacomm@2.0-service
+-vendor/etc/init/vendor.huawei.hardware.graphics.mediacomm@2.0-service.rc
+-vendor/lib/hw/mediacomm.hi6250.so
 -vendor/lib/hw/vendor.huawei.hardware.graphics.mediacomm@2.0-impl.so
 -vendor/lib/vendor.huawei.hardware.graphics.mediacomm@2.0.so
 -vendor/lib/vendor.huawei.hardware.graphics.mediacomm@2.1.so
+-vendor/lib64/hw/mediacomm.hi6250.so
 -vendor/lib64/hw/vendor.huawei.hardware.graphics.mediacomm@2.0-impl.so
 -vendor/lib64/vendor.huawei.hardware.graphics.mediacomm@2.0.so
 -vendor/lib64/vendor.huawei.hardware.graphics.mediacomm@2.1.so
@@ -512,7 +519,6 @@ etc/native_packages.xml:etc/native_packages.bin
 -vendor/bin/a3d05777-b0ec-43b0-8887-a7f93697830a.sec
 -vendor/bin/b4b71581-add2-e89f-d536-f35436dc7973.sec
 -vendor/bin/c30917f8-d869-4379-8f46-4ac62be198dd.sec
--vendor/bin/cdfinger_fps1256s_ta.sec
 -vendor/bin/d77c4d60-d279-4425-afa8-7f94559eae16.sec
 -vendor/bin/e00d7df7-79e5-4507-9d8c-df03d5a7a8a5.sec
 -vendor/bin/e8014913-e501-4d44-a9d6-058ec3b93b90.sec

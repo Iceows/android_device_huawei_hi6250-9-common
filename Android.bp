@@ -8,14 +8,42 @@ cc_prebuilt_library_shared {
     },
     target: {
         android_arm: {
-            srcs: ["input/lib/libjni_latinimegoogle.so"],
+            srcs: ["system/lib/libjni_latinimegoogle.so"],
         },
         android_arm64: {
-            srcs: ["input/lib64/libjni_latinimegoogle.so"],
+            srcs: ["system/lib64/libjni_latinimegoogle.so"],
         },
     },
     product_specific: true,
     compile_multilib: "both",
     prefer: true,
     check_elf_files: false,
+}
+
+cc_prebuilt_library_shared {
+    name: "libpn551_fw",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["system/lib64/libpn551_fw.so"],
+        },
+    },
+    product_specific: true,
+    compile_multilib: "64",
+    prefer: true,
+    check_elf_files: false,
+}
+
+
+android_app_import {
+	name: "gnss_supl20service_hisi",
+	owner: "huawei",
+	apk: "system/app/gnss_supl20service_hisi/gnss_supl20service_hisi.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
 }

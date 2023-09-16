@@ -285,4 +285,22 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+
+# AGPS Supl20
+PRODUCT_COPY_FILES += \
+     $(COMMON_PATH)/system/etc/gnss/config/gnss_suplconfig_hisi.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/gnss/config/gnss_suplconfig_hisi.xml \
+     $(COMMON_PATH)/system/etc/permissions/privapp-permissions-supl.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-supl.xml
+
+PRODUCT_PACKAGES += \
+    gnss_supl20service_hisi
+
+# IME Swype
+PRODUCT_PACKAGES += \
+    libjni_latinimegoogle
+
+# NFC Firmware
+PRODUCT_PACKAGES += \
+    libpn551_fw  
+
+
 include hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk
