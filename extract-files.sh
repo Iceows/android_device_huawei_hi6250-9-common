@@ -60,7 +60,7 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-	vendor/lib*/hw/audio.primary.hi6250.so|vendor/lib*/libhivwservice.so)
+	vendor/lib*/hw/audio.primary.hi6250.so|vendor/lib*/libhivwservice.so|vendor/lib*/hw/audio.primary_hisi.hi6250.so)
 	    "${PATCHELF}" --add-needed "libprocessgroup.so" "${2}"
 	    ;;
 	vendor/lib*/hw/gralloc.hi6250.so)
