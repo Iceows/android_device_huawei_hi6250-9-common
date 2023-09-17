@@ -14,10 +14,10 @@ cc_prebuilt_library_shared {
             srcs: ["system/lib64/libjni_latinimegoogle.so"],
         },
     },
-    product_specific: true,
     compile_multilib: "both",
     prefer: true,
     check_elf_files: false,
+    soc_specific: false,
 }
 
 cc_prebuilt_library_shared {
@@ -30,10 +30,10 @@ cc_prebuilt_library_shared {
             srcs: ["system/lib64/libpn551_fw.so"],
         },
     },
-    product_specific: true,
     compile_multilib: "64",
     prefer: true,
     check_elf_files: false,
+    soc_specific: true,
 }
 
 
@@ -41,9 +41,6 @@ android_app_import {
 	name: "gnss_supl20service_hisi",
 	owner: "huawei",
 	apk: "system/app/gnss_supl20service_hisi/gnss_supl20service_hisi.apk",
-	certificate: "platform",
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
+        certificate: "platform",
+        privileged: false
 }
