@@ -2,3 +2,15 @@ type oeminfo_nvm, domain;
 type oeminfo_nvm_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(oeminfo_nvm)
+
+allow oeminfo_nvm proc_overcommit_memory:file { read open };
+allow oeminfo_nvm device:dir { create setattr write add_name };
+allow oeminfo_nvm device:file { create write open setattr };
+
+allow oeminfo_nvm socket_device:dir { write add_name };
+allow oeminfo_nvm socket_device:sock_file { setattr create };
+allow oeminfo_nvm self:capability { chown };
+
+allow init oeminfo_nvm:unix_stream_socket { connectto };
+
+

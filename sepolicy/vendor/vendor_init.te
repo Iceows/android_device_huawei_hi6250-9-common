@@ -1,0 +1,8 @@
+get_prop(vendor_init, system_prop)
+get_prop(vendor_init, bootanim_system_prop)
+
+allow vendor_init proc_hung_task:file { write };
+allow vendor_init tmpfs:dir { create add_name write };
+allow vendor_init splashtwo_file:filesystem { getattr };
+allow vendor_init proc:file { write };
+

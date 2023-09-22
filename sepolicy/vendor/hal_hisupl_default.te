@@ -2,3 +2,7 @@ type hal_hisupl_default, domain;
 type hal_hisupl_default_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(hal_hisupl_default)
+
+get_prop(hal_hisupl_default, hwservicemanager_prop)
+binder_call(hal_hisupl_default, hwservicemanager)
+binder_call(hwservicemanager, hal_hisupl_default)

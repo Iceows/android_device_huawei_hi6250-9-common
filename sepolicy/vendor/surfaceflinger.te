@@ -1,0 +1,2 @@
+allow surfaceflinger bootanim:dir { search };
+allow surfaceflinger bootanim:file  r_file_perms;
