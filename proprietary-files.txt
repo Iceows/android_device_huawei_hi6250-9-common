@@ -6,7 +6,7 @@
 #
 
 # Audio Hardware
--vendor/lib64/hw/audio.primary.hisi.so:vendor/lib64/hw/audio.primary_hisi.hi6250.so
+-vendor/lib64/hw/audio.primary.hi6250.so
 -vendor/lib64/libasd.so
 -vendor/lib64/libaudio_custom.so
 -vendor/lib64/libaudiodump.so

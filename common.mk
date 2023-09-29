@@ -30,7 +30,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@4.0-impl \
     android.hardware.audio.service.hisi \
     android.hardware.bluetooth.audio@2.1-impl \
-    audio.primary.hisi_wrapper \
+    audio.primary.hi6250 \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
