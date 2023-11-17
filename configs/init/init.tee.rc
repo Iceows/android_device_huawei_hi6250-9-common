@@ -27,10 +27,10 @@ service teelogcat /vendor/bin/tlogcat -f
 
 # set sec_storage_data can be access by teecd
 on fs
-    mkdir /data/sec_storage_data 0700 system system
-    restorecon /data/sec_storage_data
-    mkdir /data/sec_storage_data_users 0700 system system
-    restorecon /data/sec_storage_data_users
+    # mkdir /data/sec_storage_data 0700 system system
+    # restorecon /data/sec_storage_data
+    # mkdir /data/sec_storage_data_users 0700 system system
+    # restorecon /data/sec_storage_data_users
 
 on post-fs-data
    mkdir /data/vendor/log/sec_storage_data 0775 system system
