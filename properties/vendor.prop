@@ -147,6 +147,9 @@ persist.ai.timedebug.enable=false
 # Touch
 ro.config.huawei_smallwindow=0,0,1080,1346
 
+# Charger
+ro.charger.disable_init_blank=true
+
 # TUI
 ro.tui.service=true
 
