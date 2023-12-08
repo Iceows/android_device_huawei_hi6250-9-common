@@ -132,8 +132,8 @@ ro.hdmi.service=false
 ro.config.hw_sensorhub=true
 use_sensorhub_labc=false
 
-# Storage
-persist.fw.force_adoptable=true
+# Touch
+persist.sys.fingersense=1
 
 # SurfaceFlinger
 debug.sf.disable_client_composition_cache=1
