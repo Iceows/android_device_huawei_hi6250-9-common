@@ -1,15 +1,22 @@
 # Fingerprint
 /(vendor|system/vendor)/bin/hw/vendor\.huawei\.hardware\.biometrics\.fingerprint@[0-9]\.[0-9]-service	u:object_r:hal_fingerprint_default_exec:s0
 
+# GateKeeper
+/vendor/bin/hw/android.hardware.gatekeeper@1.0-service				u:object_r:hal_gatekeeper_default_exec:s0
+
 # GPS
-/(vendor|system/vendor)/bin/hw/vendor\.huawei\.hardware\.gnss@[0-9]\.[0-9]-service	u:object_r:hal_gnss_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.huawei\.hardware\.gnss@[0-9]\.[0-9]-service		u:object_r:hal_gnss_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.huawei\.hardware\.hisupl@[0-9]\.[0-9]-service	u:object_r:hal_hisupl_default_exec:s0
+/vendor/bin/gnss_control_hisi									u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/gnss_engine_hisi									u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/gnss_supl20clientd_hisi								u:object_r:hal_gnss_default_exec:s0
+/vendor/bin/gnss_watchlssd_thirdparty								u:object_r:hal_gnss_default_exec:s0
 
 # OEMInfo
 /(vendor|system/vendor)/bin/oeminfo_nvm_server					u:object_r:oeminfo_nvm_exec:s0
 
 # Root
-/3rdmodem(/.*)?			u:object_r:thirdmodem_file:s0
+/3rdmodem(/.*)?		u:object_r:thirdmodem_file:s0
 /3rdmodemnvm(/.*)?		u:object_r:thirdmodemnvm_file:s0
 /3rdmodemnvmbkp(/.*)?		u:object_r:thirdmodemnvmbkp_file:s0
 /cust(/.*)?			u:object_r:cust_file:s0
@@ -25,9 +32,33 @@
 /(vendor|system/vendor)/bin/hw/vendor\.huawei\.hardware\.sensors@[0-9]\.[0-9]-service	u:object_r:hal_sensors_default_exec:s0
 
 # TEE
-/(vendor|system/vendor)/bin/teecd						u:object_r:tee_exec:s0
+/(vendor|system/vendor)/bin/teecd							u:object_r:tee_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.huawei\.hardware\.libteec@2\.0-service	u:object_r:hal_libteec_default_exec:s0
 
 # Perfgenius
 /(vendor|system/vendor)/bin/hw/vendor\.huawei\.hardware\.perfgenius@2\.0-service	u:object_r:hal_perfgenius_default_exec:s0
+
+# Fingerprint
+/data/fpc(/.*)?                                          				u:object_r:fingerprintd_data_file:s0
+/dev/fingerprint                                         				u:object_r:fps_device:s0
+#/sys/devices/platform/fingerprint(/.*)?                  				u:object_r:fps_sysfs:s0
+
+
+#############################
+# Same process HALs installed by platform into /vendor
+#
+/(vendor|system/vendor)/lib(64)?/hw/gralloc\.hi6250\.so                              u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/hw/vendor\.huawei\.hardware\.graphics\.mediacomm@[0-9]\.[0-9].so	u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libOpenCL\.so			u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libOpenCL\.so.1			u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libOpenCL\.so.1.1			u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libgpucommon_vendor_client\.so	u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libhiion\.so				u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libmediacomm@2.0-client\.so		u:object_r:same_process_hal_file:s0
+
+# TEE
+/(vendor|system/vendor)/lib(64)?/hw/vendor\.huawei\.hardware\.libteec@2\.0-impl\.so 		u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libteec\.so				u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libteec_vendor\.so			u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libc_secshared\.so			u:object_r:same_process_hal_file:s0
 
