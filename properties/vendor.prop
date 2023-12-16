@@ -4,7 +4,7 @@
 
 # Bluetooth
 ro.rfkilldisabled=1
-ro.bt.bdaddr_path=/data/misc/bluedroid/macbt
+ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
 
 bluetooth.device.class_of_device=90,2,12
 bluetooth.device.default_name=Huawei hi6250
