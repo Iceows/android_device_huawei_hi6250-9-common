@@ -26,7 +26,7 @@ PRODUCT_PACKAGES += \
     
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@4.0-impl  \
+    android.hardware.audio@4.0-impl-V2 \
     android.hardware.audio.effect@4.0-impl \
     android.hardware.audio.service.hisi \
     android.hardware.bluetooth.audio@2.1-impl \
@@ -78,11 +78,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
-# ConfigStore
+# ConfigStore (only service)
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
     
-# Fingerprint
+# Fingerprint (only service)
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
 
@@ -93,8 +93,7 @@ PRODUCT_PACKAGES += \
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
+    android.hardware.gatekeeper@1.0-service.software
 
 # Graphics
 PRODUCT_PACKAGES += \

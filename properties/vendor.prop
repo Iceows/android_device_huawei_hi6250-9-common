@@ -32,8 +32,15 @@ bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
 bluetooth.profile.ccp.server.enabled?=true
 bluetooth.profile.vcp.controller.enabled?=true
+
 # HCI disable commands
 bluetooth.hci.disabled_commands=
+
+# Gatekeeper
+# ro.hardware.gatekeeper=hi6250
+
+# Keystore
+# ro.hardware.keystore=hi6250
 
 # Fastbootd
 ro.fastbootd.available=true
