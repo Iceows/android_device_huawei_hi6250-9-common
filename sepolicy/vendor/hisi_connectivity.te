@@ -1,0 +1,4 @@
+type hisi_connectivity, domain;
+type hisi_connectivity_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(hisi_connectivity)

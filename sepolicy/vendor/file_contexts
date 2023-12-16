@@ -12,6 +12,9 @@
 /vendor/bin/gnss_supl20clientd_hisi								u:object_r:hal_gnss_default_exec:s0
 /vendor/bin/gnss_watchlssd_thirdparty								u:object_r:hal_gnss_default_exec:s0
 
+# OSS hisi init
+/vendor/bin/hw/hisi_init                        u:object_r:hisi_connectivity_exec:s0
+
 # OEMInfo
 /(vendor|system/vendor)/bin/oeminfo_nvm_server					u:object_r:oeminfo_nvm_exec:s0
 
