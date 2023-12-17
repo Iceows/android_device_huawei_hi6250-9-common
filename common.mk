@@ -102,8 +102,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.graphics.composer@2.2-service \
-    android.hardware.memtrack@1.0-service
-      android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    android.hardware.memtrack@1.0-impl \
     android.hardware.graphics.common@1.0_types.vendor \
     libion
 
@@ -147,13 +147,16 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/init.recovery.hi6250.rc:$(TARGET_RECOVERY_OUT)/root/init.recovery.hi6250.rc \
     $(COMMON_PATH)/configs/init/init.tee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.tee.rc \
     $(COMMON_PATH)/configs/init/init.vowifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vowifi.rc \
-    $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc
+    $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
+    $(COMMON_PATH)/configs/init/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.rc
+
+
 
 # Fstab
-PRODUCT_PACKAGES += \
+PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/fstab.hi6250:$(TARGET_COPY_OUT_RAMDISK)/fstab.hi6250 \
     $(COMMON_PATH)/configs/init/fstab.hi6250:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.hi6250 \
-    $(COMMON_PATH)/configs/init/fstab.modem:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.modem \
+    $(COMMON_PATH)/configs/init/fstab.modem:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.modem
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -187,10 +190,10 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
     WifiOverlay \
-    TetheringConfigOverlay  \
     wpa_supplicant \
     wpa_supplicant.conf
-
+#    TetheringConfigOverlay  \
+    
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
@@ -270,8 +273,6 @@ PRODUCT_COPY_FILES += \
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlay
-
-
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Power
@@ -279,12 +280,10 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
     android.hardware.power@1.0-service
 
-
 # Protobuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat \
     libprotobuf-cpp-lite-vendorcompat
-
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -295,12 +294,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
     librilutils
-
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/init/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.rc
-
-
-
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -324,26 +317,19 @@ PRODUCT_USE_VNDK_OVERRIDE := true
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
-
-
 # VNDK
 PRODUCT_PACKAGES += \
     libunwindstack.vendor
 
-
-
-
 # AGPS Supl20
+PRODUCT_PACKAGES += \
+    gnss_supl20service_hisi
 PRODUCT_COPY_FILES += \
      $(COMMON_PATH)/system/etc/gnss/config/gnss_suplconfig_hisi.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/gnss/config/gnss_suplconfig_hisi.xml \
      $(COMMON_PATH)/system/etc/permissions/privapp-permissions-supl.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-supl.xml
 
-PRODUCT_PACKAGES += \
-    gnss_supl20service_hisi
-
 # NFC Firmware
 PRODUCT_PACKAGES += \
     libpn551_fw  
-
 
 include hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk
