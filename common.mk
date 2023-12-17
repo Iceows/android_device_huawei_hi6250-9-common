@@ -70,10 +70,9 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.4-service.clearkey
-
+    android.hardware.drm@1.4.vendor \
+    android.hardware.drm-service.clearkey
+    
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -149,8 +148,6 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/init.vowifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vowifi.rc \
     $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
     $(COMMON_PATH)/configs/init/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.rc
-
-
 
 # Fstab
 PRODUCT_COPY_FILES += \
