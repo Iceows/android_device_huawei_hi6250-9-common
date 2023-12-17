@@ -26,8 +26,8 @@ PRODUCT_PACKAGES += \
     
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl-hisi \
-    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio@4.0-impl-hisi \
+    android.hardware.audio.effect@4.0-impl \
     android.hardware.audio.service.hisi \
     android.hardware.bluetooth.audio@2.1-impl \
     audio.primary.hi6250 \
