@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 The LineageOS Project
+# Copyright (C) 2023 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -13,7 +13,7 @@ $(call inherit-product, vendor/huawei/hi6250-9-common/hi6250-9-common-vendor.mk)
 ## Inherit hardware repo (huawei version)
 $(call inherit-product, hardware/huawei/hardware.mk)
 
-## Setup dalvik vm configs
+# Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # AAPT
@@ -26,8 +26,8 @@ PRODUCT_PACKAGES += \
     
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@4.0-impl-hisi \
-    android.hardware.audio.effect@4.0-impl \
+    android.hardware.audio@6.0-impl-hisi \
+    android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service.hisi \
     android.hardware.bluetooth.audio@2.1-impl \
     audio.primary.hi6250 \
@@ -186,9 +186,18 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.2-service \
+    android.hardware.nfc@1.0 \
+    android.hardware.nfc@1.1 \
+    android.hardware.nfc@1.2 \
+    android.hardware.secure_element@1.0 \
+    android.hardware.secure_element@1.1 \
+    android.hardware.secure_element@1.2 \
     com.android.nfc_extras \
     NfcNci \
-    Tag
+    SecureElement \
+    Tag \
+    vendor.nxp.nxpese@1.0.vendor:64 \
+    vendor.nxp.nxpnfc@1.0.vendor:64
 
 # Permissions
 PRODUCT_COPY_FILES += \
