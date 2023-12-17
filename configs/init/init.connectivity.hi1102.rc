@@ -23,15 +23,11 @@ on early-init
     setprop is_hisi_connectivity_chip 1
     setprop ro.hardware.consumerir "hisi.hi6250"
 
-on init
-    chown bluetooth bluetooth /dev/hwbt
-
-on boot
-#   for bluetooth mac
-    mkdir /data/vendor/bluedroid 02770 bluetooth bluetooth
 
 # optimize selinux strategy for OTA
 on post-fs-data
+#bluetooth subsystem
+     mkdir /data/vendor/bluedroid 02771 bluetooth bluetooth
 #wifi
     setprop wifi.interface wlan0
     setprop wifi.direct.interface p2p0
@@ -104,4 +100,18 @@ service fusd /vendor/bin/fusion_daemon
     class late_start
     user system
     group system
+    
+on property:sys.conn_macs.ready=1
+    # Bluetooth
+    chown bluetooth bluetooth /data/vendor/bluedroid/macbt
+    chmod 0666 /data/vendor/bluedroid/macbt
+    
+#bluetooth
+on property:bluetooth.log.file.create=true
+   mkdir /data/log/bt
+   chown bluetooth bluetooth /data/log/bt
+   chmod 775 /data/log/bt
+   setprop bluetooth.log.file.create false
+   chown bluetooth bluetooth /dev/hwbt
+
 
