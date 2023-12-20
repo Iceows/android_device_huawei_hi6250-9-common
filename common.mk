@@ -23,7 +23,7 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 # IME Input
 PRODUCT_PACKAGES += \
     libjni_latinimegoogle
-  
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@4.0-impl-hisi \
@@ -37,7 +37,8 @@ PRODUCT_PACKAGES += \
     libaudioroute \
     libtinyalsa \
     libtinycompress
-    
+
+# Audio configuration
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/enginedefault/config/example/phone/audio_policy_engine_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_engine_configuration.xml \
     frameworks/av/services/audiopolicy/enginedefault/config/example/phone/audio_policy_engine_default_stream_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_engine_default_stream_volumes.xml \
@@ -52,6 +53,8 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/volume/default_volume_tables.xml \
     $(COMMON_PATH)/configs/audio/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     $(COMMON_PATH)/configs/audio/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+
+TARGET_EXCLUDES_AUDIOFX := true
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -72,7 +75,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
     android.hardware.drm-service.clearkey
-    
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -80,7 +83,7 @@ PRODUCT_PACKAGES += \
 # ConfigStore (only service)
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
-    
+
 # Fingerprint (only service)
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
@@ -190,7 +193,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 #    TetheringConfigOverlay  \
-    
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
@@ -217,7 +220,7 @@ PRODUCT_PACKAGES += \
     Tag \
     vendor.nxp.nxpese@1.0.vendor:64 \
     vendor.nxp.nxpnfc@1.0.vendor:64
-    
+
 # Media
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
@@ -229,7 +232,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
-
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -269,7 +271,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS := \
+    $(COMMON_PATH)/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Power
@@ -327,6 +330,6 @@ PRODUCT_COPY_FILES += \
 
 # NFC Firmware
 PRODUCT_PACKAGES += \
-    libpn551_fw  
+    libpn551_fw
 
 include hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk
