@@ -18,13 +18,20 @@ service teecd /vendor/bin/teecd
     disabled
     seclabel u:r:tee:s0
 
-
 service teelogcat /vendor/bin/tlogcat -f
     class late_start
     user root
     group system
     disabled
     seclabel u:r:tlogcat:s0
+
+# Start debug services only if persist.sys.huawei.debug.on is set to 1
+on property:persist.sys.huawei.debug.on=1
+start teelogcat
+
+# Stop debug services if persist.sys.huawei.debug.on is set to 0
+on property:persist.sys.huawei.debug.on=0
+stop teelogcat
 
 # set sec_storage_data can be access by teecd to store fingerprint infos
 on post-fs-data
