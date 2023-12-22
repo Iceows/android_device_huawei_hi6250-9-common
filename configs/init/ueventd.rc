@@ -67,5 +67,17 @@
 /dev/pn544  					0660 	nfc 	nfc
 /dev/cxd224x-i2c 				0660 	nfc 	nfc
 
+# Moved from init
+/dev/fingerprint				0660	system system
+/dev/socket/oeminfo_nvm	0666	system system
+/dev/soundtrigger_dma_drv	0660	media media
+/dev/nxp_smartpa_dev		0660	media media
+/dev/sensorhub				0664	system system
+/dev/motionhub				0664	system system
+
+/sys/class/sensors/libsensor_ver	0664	system system
+
+
+
 /dev/block/mmcblk0p4 				0660 	system 	system
 

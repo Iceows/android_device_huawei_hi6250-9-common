@@ -61,29 +61,6 @@
         <fqname>@1.1::ISurfaceFlingerConfigs/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.drm</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ICryptoFactory</name>
-            <instance>default</instance>
-            <instance>widevine</instance>
-        </interface>
-        <interface>
-            <name>IDrmFactory</name>
-            <instance>default</instance>
-            <instance>widevine</instance>
-        </interface>
-        <fqname>@1.0::ICryptoFactory/default</fqname>
-        <fqname>@1.0::ICryptoFactory/widevine</fqname>
-        <fqname>@1.0::IDrmFactory/default</fqname>
-        <fqname>@1.0::IDrmFactory/widevine</fqname>
-        <fqname>@1.1::ICryptoFactory/clearkey</fqname>
-        <fqname>@1.1::ICryptoFactory/widevine</fqname>
-        <fqname>@1.1::IDrmFactory/clearkey</fqname>
-        <fqname>@1.1::IDrmFactory/widevine</fqname>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.gnss</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -209,16 +186,6 @@
         <fqname>@1.1::IRadio/slot2</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.sensors</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISensors</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISensors/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>android.hardware.thermal</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -327,6 +294,29 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.0::IFmControl/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.drm</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ICryptoFactory</name>
+            <instance>default</instance>
+            <instance>widevine</instance>
+        </interface>
+        <interface>
+            <name>IDrmFactory</name>
+            <instance>default</instance>
+            <instance>widevine</instance>
+        </interface>
+        <fqname>@1.0::ICryptoFactory/default</fqname>
+        <fqname>@1.0::ICryptoFactory/widevine</fqname>
+        <fqname>@1.0::IDrmFactory/default</fqname>
+        <fqname>@1.0::IDrmFactory/widevine</fqname>
+        <fqname>@1.1::ICryptoFactory/clearkey</fqname>
+        <fqname>@1.1::ICryptoFactory/widevine</fqname>
+        <fqname>@1.1::IDrmFactory/clearkey</fqname>
+        <fqname>@1.1::IDrmFactory/widevine</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.huawei.hardware.gnss</name>
@@ -630,6 +620,16 @@
     </hal>
     <hal format="hidl">
         <name>vendor.huawei.hardware.sensors</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISensors</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::ISensors/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.sensors</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>

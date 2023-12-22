@@ -76,10 +76,6 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
     android.hardware.drm-service.clearkey
 
-# Fastbootd
-PRODUCT_PACKAGES += \
-    fastbootd
-
 # ConfigStore (only service)
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
@@ -149,7 +145,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/init.recovery.hi6250.rc:$(TARGET_RECOVERY_OUT)/root/init.recovery.hi6250.rc \
     $(COMMON_PATH)/configs/init/init.tee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.tee.rc \
     $(COMMON_PATH)/configs/init/init.vowifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vowifi.rc \
-    $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
+    $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
     $(COMMON_PATH)/configs/init/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.rc
 
 # Fstab
@@ -191,19 +187,21 @@ PRODUCT_PACKAGES += \
     hostapd \
     WifiOverlay \
     wpa_supplicant \
-    wpa_supplicant.conf
-#    TetheringConfigOverlay  \
+    wpa_supplicant.conf \
+    TetheringConfigOverlay
 
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service \
-    android.frameworks.sensorservice@1.0 \
+    android.hardware.sensors@1.0-service
+    
+# For GNSS
+PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service.basic
+    android.hardware.usb@1.0-service
 
 # NFC
 PRODUCT_PACKAGES += \

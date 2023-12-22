@@ -519,7 +519,8 @@ on boot
     chmod 660 /sys/devices/platform/huawei_sensorhub_logbuff/logbuff_config
     chown system system /sys/devices/platform/huawei_sensorhub_logbuff/logbuff_flush
     chmod 444 /sys/devices/platform/huawei_sensorhub_logbuff/logbuff_flush
-	chown system system /sys/class/sensors/libsensor_ver
+    chmod 0664 /sys/class/sensors/libsensor_ver
+    chown system system /sys/class/sensors/libsensor_ver
 
     chown system system /sys/devices/platform/huawei_sensor/set_fingersense_enable
     chmod 0660 /sys/devices/platform/huawei_sensor/set_fingersense_enable
@@ -530,7 +531,8 @@ on boot
     chown system system /sys/devices/platform/huawei_sensor/fingersense_latch_data
     chmod 0440 /sys/devices/platform/huawei_sensor/fingersense_latch_data
     chown root system /proc/sensorhub_logbuff
-# add for nfc
+    
+    # add for nfc
     chown nfc nfc /sys/nfc/nfc_wired_ese_type
     chmod 0444 /sys/nfc/nfc_wired_ese_type
     chown nfc nfc /sys/nfc/nfc_activated_se_info
