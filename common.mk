@@ -77,14 +77,19 @@ PRODUCT_PACKAGES += \
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.4.vendor \
-    android.hardware.drm-service.clearkey
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service \
+    android.hardware.drm@1.4-service.clearkey
+    
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.1.vendor \
+    android.hardware.drm@1.2.vendor
 
 # ConfigStore (only service)
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
 
-# Fingerprint (only service)
+# Fingerprint sensor
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service
 #    android.hardware.biometrics.fingerprint@2.1.vendor
