@@ -577,6 +577,7 @@ vendor/etc/native_packages.xml:vendor/etc/native_packages.bin
 -vendor/lib64/libteec_eid.so
 -vendor/lib64/libteec_vendor.so
 -vendor/lib64/vendor.huawei.hardware.libteec@2.0.so
+-vendor/bin/tlogcat
 
 # Thermal
 -vendor/lib/hw/thermal.hi6250.so

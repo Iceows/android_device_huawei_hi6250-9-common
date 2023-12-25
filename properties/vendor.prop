@@ -37,7 +37,7 @@ bluetooth.profile.vcp.controller.enabled?=true
 bluetooth.hci.disabled_commands=
 
 # Gatekeeper
-# ro.hardware.gatekeeper=hi6250
+ro.hardware.gatekeeper=hi6250
 
 # Keystore
 # ro.hardware.keystore=hi6250
