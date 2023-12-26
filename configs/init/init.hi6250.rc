@@ -7,6 +7,10 @@
 #      http://www.apache.org/licenses/LICENSE-2.0
 #
 
+
+# Add vendor charger init (only if you have in bootmode charger)
+import /vendor/etc/init/init.${ro.bootmode}.rc
+
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug/tracing
@@ -76,7 +80,6 @@ on init
     chown system system /sys/kernel/set_hmp_thresholds/policy
     chmod 0664 /sys/kernel/set_hmp_thresholds/policy
 
-#Added by z00349318 @ 2015-11-3 for perfhub begin
     chown system system /sys/class/thermal/thermal_zone0/mode
     chmod 0660 /sys/class/thermal/thermal_zone0/mode
     chown system system /sys/class/thermal/thermal_zone0/trip_point_0_temp
@@ -93,12 +96,9 @@ on init
     chmod 0660 /sys/kernel/perfhub/cpuaffinity
     chown system system /dev/cpu_dma_latency
     chmod 0660 /dev/cpu_dma_latency
-#Added by z00349318 @ 2015-11-03 for perfhub end
 
-#Added for qosctrl begin
     chown system system /dev/iaware_qos_ctrl
     chmod 660 /dev/iaware_qos_ctrl
-#Added for qosctrl end
 
     chown system system /sys/kernel/eas/boost
     chmod 0660 /sys/kernel/eas/boost
@@ -114,16 +114,16 @@ on init
     chown root system /sys/kernel/virt_to_phys
     chmod 0660 /sys/kernel/virt_to_phys
 
-	chmod 0750 /sys/kernel/mntn/
-	chmod 0750 /sys/kernel/mntn/switch/
-	chmod 0660 /sys/kernel/mntn/switch/irq
-	chmod 0660 /sys/kernel/mntn/switch/task
-	chmod 0660 /sys/kernel/mntn/switch/cpuidle
-	chmod 0660 /sys/kernel/mntn/switch/cpuonoff
-	chmod 0660 /sys/kernel/mntn/switch/syscall
-	chmod 0660 /sys/kernel/mntn/switch/hungtask
-	chmod 0660 /sys/kernel/mntn/switch/tasklet
-	chmod 0660 /sys/kernel/mntn/switch/worker
+    chmod 0750 /sys/kernel/mntn/
+    chmod 0750 /sys/kernel/mntn/switch/
+    chmod 0660 /sys/kernel/mntn/switch/irq
+    chmod 0660 /sys/kernel/mntn/switch/task
+    chmod 0660 /sys/kernel/mntn/switch/cpuidle
+    chmod 0660 /sys/kernel/mntn/switch/cpuonoff
+    chmod 0660 /sys/kernel/mntn/switch/syscall
+    chmod 0660 /sys/kernel/mntn/switch/hungtask
+    chmod 0660 /sys/kernel/mntn/switch/tasklet
+    chmod 0660 /sys/kernel/mntn/switch/worker
 
 #cpuset config
     # Create cgroup mount points for process groups
@@ -276,29 +276,6 @@ on property:sys.boot_completed=1
     write /sys/kernel/eas/capacity_margin 1860
     write /sys/kernel/eas/sd_capacity_margin 1860
 
-on charger
-    mount_all /vendor/etc/fstab.${ro.hardware}
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
-    restorecon_recursive /sys/devices/system/cpu/cpu0/cpufreq/interactive
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 807000
-    chown system system /sys/class/android_usb/android0/switch_request
-    chmod 0664 /sys/class/android_usb/android0/switch_request
-
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor powersave
-    write /sys/kernel/set_hmp_thresholds/enable 0
-    write /sys/kernel/hmp/up_threshold 1020
-    write /sys/kernel/hmp/down_threshold 768
-    write /sys/kernel/set_hmp_thresholds/enable 1
-    write /sys/kernel/eas/boot_boost 0
-
-    write /sys/class/devfreq/ddrfreq/min_freq 0
-    write /sys/class/devfreq/ddrfreq/max_freq 0
-    write /sys/class/devfreq/ddrfreq_latency/min_freq 0
-    write /sys/class/devfreq/ddrfreq_latency/max_freq 0
-    write /sys/class/devfreq/ddrfreq_up_threshold/max_freq 933000000
-    write /sys/class/devfreq/ddrfreq_up_threshold/min_freq 933000000
-
-    class_start charger
 
 on fs
     # mount mtd partitions
@@ -785,7 +762,4 @@ service gpuassistant /system/bin/gpuassistant
     user system
     group system
 
-service charger /system/bin/charger
-    class charger
-    critical
-    seclabel u:r:charger:s0
+

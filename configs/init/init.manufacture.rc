@@ -50,12 +50,6 @@ on post-fs-data
 
 on boot
 
-service atcmdserver /vendor/bin/atcmdserver
-    class main
-    group root system nfc graphics audio camera
-    disabled
-    seclabel u:r:atcmdserver:s0
-
 service oeminfo_nvm /vendor/bin/oeminfo_nvm_server
     class core
     group system readproc root
@@ -76,10 +70,6 @@ service multichannel /vendor/bin/multichannel
     class main
     group root system radio graphics
     disabled
-
-service goldeneye /system/bin/goldeneye
-    class main
-    user root
 
 on property:ro.runmode=factory
     start fcs
