@@ -10,9 +10,6 @@ COMMON_PATH := device/huawei/hi6250-9-common
 ## Inherit common vendor blobs
 $(call inherit-product, vendor/huawei/hi6250-9-common/hi6250-9-common-vendor.mk)
 
-## Inherit hardware repo (huawei version)
-$(call inherit-product, hardware/huawei/hardware.mk)
-
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
@@ -27,6 +24,17 @@ PRODUCT_PACKAGES += \
 # IME Input
 PRODUCT_PACKAGES += \
     libjni_latinimegoogle
+
+# Power
+PRODUCT_PACKAGES += \
+     android.hardware.power-service.hisi
+
+PRODUCT_COPY_FILES += \
+    system/core/libprocessgroup/profiles/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+    
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -173,9 +181,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service
-
+    android.hardware.light-service.hisi
 
 # Linker
 PRODUCT_COPY_FILES += \
@@ -282,11 +288,9 @@ PRODUCT_COPY_FILES += \
 # Overlay
 DEVICE_PACKAGE_OVERLAYS := \
     $(COMMON_PATH)/overlay
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service.hisi
 
 # Protobuf
 PRODUCT_PACKAGES += \
@@ -306,7 +310,10 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH) \
-    hardware/huawei
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/huawei \
+    hardware/huawei/power
 
 # Shims
 PRODUCT_PACKAGES += \
