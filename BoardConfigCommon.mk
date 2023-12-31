@@ -11,6 +11,9 @@ COMMON_PATH := device/huawei/hi6250-9-common
 # Fix charger animation conflit
 BUILD_BROKEN_DUP_RULES := true
 
+# VNDK
+BUILD_BROKEN_PREBUILT_ELF_FILES := true
+
 # Arch
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
