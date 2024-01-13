@@ -49,7 +49,7 @@ ro.fastbootd.available=true
 ro.audio.offload_wakelock=false
 ro.config.hw_music_lp=true
 ro.config.music_lp_vol=true
-ro.hardware.audio.primary=hi6250
+ro.hardware.audio.primary=hisi_wrapper
 persist.kirin.media.offload.enable=true
 persist.kirin.media.lowlatency.enable=false
 ro.vendor.config.hw_music_lp=true
@@ -70,6 +70,10 @@ dalvik.vm.heapgrowthlimit=384m
 dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapmaxfree=8m
 dalvik.vm.heapminfree=2m
+
+# Crypto
+ro.crypto.volume.contents_mode=aes-256-xts
+ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Display
 persist.sys.jankenable=true
@@ -173,15 +177,15 @@ persist.egl.support_vr=1
 zygote.critical_window.minute=10
 
 # Huawei - Platform
-bastet.service.enable=true
-vendor.debug.config.mmu_en=1
-ro.vendor.tui.service=true
-ro.kirin.config.hw_board_ipa=true
-ro.kirin.config.hw_perfgenius=true
-ro.product.platform.pseudonym=1ARB9CV
-ro.kirin.product.platform=hi6250
-ro.config.hw_smart_shrink=true
-ro.comp.chipset_version=Chipset-chicago 9.1.0.6(15F1)
+# bastet.service.enable=true
+# vendor.debug.config.mmu_en=1
+# ro.vendor.tui.service=true
+# ro.kirin.config.hw_board_ipa=true
+# ro.kirin.config.hw_perfgenius=true
+# ro.product.platform.pseudonym=1ARB9CV
+# ro.kirin.product.platform=hi6250
+# ro.config.hw_smart_shrink=true
+# ro.comp.chipset_version=Chipset-chicago 9.1.0.6(15F1)
 
 # Logs
 persist.log.tag.hwcomposer=S
