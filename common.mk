@@ -29,26 +29,31 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
      android.hardware.power-service.hisi
 
+# Control groups and task profiles (vndk 28)
 PRODUCT_COPY_FILES += \
-    system/core/libprocessgroup/profiles/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
-    system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+    system/core/libprocessgroup/profiles/cgroups_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    system/core/libprocessgroup/profiles/task_profiles_28.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@4.0-impl-hisi \
+    android.hardware.audio@4.0-impl \
     android.hardware.audio.effect@4.0-impl \
     android.hardware.audio.service.hisi \
-    android.hardware.bluetooth.audio@2.1-impl \
-    audio.primary.hi6250 \
+    android.hardware.bluetooth.audio@2.1-impl
+
+PRODUCT_PACKAGES += \
+    audio.primary.hisi_wrapper \
     audio.bluetooth.default \
     audio.r_submix.default \
-    audio.usb.default \
-    libaudioroute \
-    libtinyalsa \
-    libtinycompress
+    audio.usb.default
+
+PRODUCT_PACKAGES += \
+    libaudiopreprocessing \
+    libtinycompress \
+    libalsautils
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -188,6 +193,7 @@ PRODUCT_COPY_FILES += \
 
 # Hisi init package
 PRODUCT_PACKAGES += \
+    mploader \
     hisi_init \
     libxcollie
 
@@ -225,15 +231,16 @@ PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0 \
     android.hardware.nfc@1.1 \
     android.hardware.nfc@1.2 \
-    android.hardware.secure_element@1.0 \
-    android.hardware.secure_element@1.1 \
-    android.hardware.secure_element@1.2 \
     com.android.nfc_extras \
     NfcNci \
-    SecureElement \
     Tag \
-    vendor.nxp.nxpese@1.0.vendor:64 \
-    vendor.nxp.nxpnfc@1.0.vendor:64
+    vendor.nxp.nxpese@1.0.vendor \
+    vendor.nxp.nxpnfc@1.0.vendor
+    
+# Secure element
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.0 \
+    SecureElement
 
 # Media
 PRODUCT_COPY_FILES += \
