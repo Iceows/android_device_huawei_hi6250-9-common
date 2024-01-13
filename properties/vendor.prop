@@ -159,11 +159,12 @@ persist.ai.timedebug.enable=false
 ro.config.huawei_smallwindow=0,0,1080,1346
 
 # Charger
-# ro.charger.disable_init_blank=true
-ro.charger.enable_suspend=1
+ro.charger.disable_init_blank=true
+ro.charger.enable_suspend=true
 
 # TUI
 ro.tui.service=true
+ro.vendor.tui.service=true
 
 # USB
 persist.media.usbvoice.enable=true
@@ -179,11 +180,10 @@ zygote.critical_window.minute=10
 # Huawei - Platform
 # bastet.service.enable=true
 # vendor.debug.config.mmu_en=1
-# ro.vendor.tui.service=true
 # ro.kirin.config.hw_board_ipa=true
 # ro.kirin.config.hw_perfgenius=true
-# ro.product.platform.pseudonym=1ARB9CV
 # ro.kirin.product.platform=hi6250
+# ro.product.platform.pseudonym=1ARB9CV
 # ro.config.hw_smart_shrink=true
 # ro.comp.chipset_version=Chipset-chicago 9.1.0.6(15F1)
 
