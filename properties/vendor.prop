@@ -1,37 +1,35 @@
-#
-# vendor.prop for hi6250-common
-#
+# Audio
+ro.audio.offload_wakelock=false
+ro.config.hw_music_lp=true
+ro.config.music_lp_vol=true
+ro.hardware.audio.primary=hisi_wrapper
 
 # Bluetooth
-ro.rfkilldisabled=1
 ro.bt.bdaddr_path=/data/vendor/bluedroid/macbt
+
+persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
+ro.bluetooth.a2dp_offload.supported=true
+persist.bluetooth.a2dp_offload.disabled=false
+persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 
 bluetooth.device.class_of_device=90,2,12
 bluetooth.device.default_name=Huawei hi6250
 bluetooth.le.disable_apcf_extended_features=1
 bluetooth.sco.disable_enhanced_connection=1
 
-bluetooth.profile.asha.central.enabled?=true
 bluetooth.profile.a2dp.source.enabled?=true
 bluetooth.profile.avrcp.target.enabled?=true
-bluetooth.profile.bap.broadcast.assist.enabled?=true
-bluetooth.profile.bap.unicast.client.enabled?=true
 bluetooth.profile.bas.client.enabled?=true
-bluetooth.profile.csip.set_coordinator.enabled?=true
 bluetooth.profile.gatt.enabled?=true
-bluetooth.profile.hap.client.enabled?=true
 bluetooth.profile.hfp.ag.enabled?=true
 bluetooth.profile.hid.device.enabled?=true
 bluetooth.profile.hid.host.enabled?=true
 bluetooth.profile.map.server.enabled?=true
-bluetooth.profile.mcp.server.enabled?=true
 bluetooth.profile.opp.enabled?=true
 bluetooth.profile.pan.nap.enabled?=true
 bluetooth.profile.pan.panu.enabled?=true
 bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
-bluetooth.profile.ccp.server.enabled?=true
-bluetooth.profile.vcp.controller.enabled?=true
 
 # HCI disable commands
 bluetooth.hci.disabled_commands=
@@ -42,79 +40,33 @@ ro.hardware.gatekeeper=hi6250
 # Keystore
 # ro.hardware.keystore=hi6250
 
-# Fastbootd
-ro.fastbootd.available=true
-
-# Audio
-ro.audio.offload_wakelock=false
-ro.config.hw_music_lp=true
-ro.config.music_lp_vol=true
-ro.hardware.audio.primary=hisi_wrapper
-persist.kirin.media.offload.enable=true
-persist.kirin.media.lowlatency.enable=false
-ro.vendor.config.hw_music_lp=true
-ro.vendor.config.music_lp_vol=true
 
 # CPU
 persist.sys.cpuset.enable=1
-persist.sys.cpuset.subswitch=250
+persist.sys.cpuset.subswitch=0
 persist.sys.iaware.cpuenable=true
-persist.sys.fast_h_duration=2000
-persist.sys.fast_h_max=50
-persist.sys.max_rdh_delay=0
-
-# Dalvik
-dalvik.vm.heapsize=512m
-dalvik.vm.heapstartsize=8m
-dalvik.vm.heapgrowthlimit=384m
-dalvik.vm.heaptargetutilization=0.75
-dalvik.vm.heapmaxfree=8m
-dalvik.vm.heapminfree=2m
 
 # Crypto
-ro.crypto.volume.contents_mode=aes-256-xts
-ro.crypto.volume.filenames_mode=aes-256-cts
+# ro.crypto.volume.contents_mode=aes-256-xts
+# ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Display
-persist.sys.jankenable=true
+ro.opengles.version=196610
 debug.hwui.render_dirty_regions=false
-ro.sys.umsdirtyratio=2
+debug.renderengine.backend=threaded
 persist.alloc_buffer_sync=true
 persist.texture_cache_opt=1
+persist.smart_pool=1
+persist.touch_vsync_opt=1
+persist.touch_move_opt=1
 debug.sf.latch_unsignaled=1
-debug.sf.enable_gl_backpressure=1
+debug.sf.disable_backpressure=1
 persist.partial_update_support=1
 persist.rog_feature=1
-debug.renderengine.backend=threaded
 
-# Gralloc
-persist.smart_pool=1
-persist.log.tag.GRALLOC=S
-
-# HWUI
-ro.hwui.texture_cache_size=72
-ro.hwui.texture_cache_flushrate=0.4
-ro.hwui.layer_cache_size=48
-ro.hwui.path_cache_size=32
-ro.hwui.shape_cache_size=2
-ro.hwui.drop_shadow_cache_size=6
-ro.hwui.gradient_cache_size=1
-ro.hwui.text_large_cache_height=1024
-ro.hwui.text_large_cache_width=2048
-ro.hwui.text_small_cache_height=1024
-ro.hwui.text_small_cache_width=1024
-ro.hwui.r_buffer_cache_size=8
-
-# IMS/VOLTE
+# IMS
 ro.config.callinwifi=200,6
 ro.config.hw_volte_on=true
-
-# IR
-config.disable_consumerir=true
-
-# Keymaster
-ro.config.keypasstouser=true
-ro.config.hw_ukey_version=2
 
 # Kernel
 ro.config.enable_rcc=true
@@ -122,12 +74,11 @@ ro.config.enable_rcc=true
 # Media
 debug.stagefright.ccodec=0
 media.stagefright.thumbnail.prefer_hw_codecs=true
+persist.media.offload.enable=true
+persist.media.lowlatency.enable=false
 
 # MMU
 ro.config.mmu_en=1
-
-# Recovery
-persist.sys.recovery_update=true
 
 # RIL
 ro.config.ipv4.mtu=1400
@@ -135,64 +86,18 @@ bastet.service.enable=true
 ro.config.hw_eccNumUseRplmn=true
 persist.radio.apm_sim_not_pwdn=true
 
-# Screen
-hw.lcd.density=480
-ro.hdmi.service=false
-
 # Sensors
 ro.config.hw_sensorhub=true
 use_sensorhub_labc=false
 
-# Touch
-persist.sys.fingersense=1
-
-# SurfaceFlinger
-debug.sf.disable_client_composition_cache=1
-debug.sf.enable_transaction_tracing=false
-debug.sf.predict_hwc_composition_strategy=0
-service.sf.prime_shader_cache=0
-
-# Time
-persist.ai.timedebug.enable=false
+# Storage
+persist.fw.force_adoptable=true
 
 # Touch
 ro.config.huawei_smallwindow=0,0,1080,1346
 
-# Charger
-ro.charger.disable_init_blank=true
-ro.charger.enable_suspend=true
-
 # TUI
 ro.tui.service=true
-ro.vendor.tui.service=true
 
-# USB
-persist.media.usbvoice.enable=true
-persist.media.usbvoice.name=USB-Audio - HUAWEI GLASS
-
-# VR
-ro.vr_display.service=true
-persist.egl.support_vr=1
-
-# Zygote
-zygote.critical_window.minute=10
-
-# Huawei - Platform
-# bastet.service.enable=true
-# vendor.debug.config.mmu_en=1
-# ro.kirin.config.hw_board_ipa=true
-# ro.kirin.config.hw_perfgenius=true
-# ro.kirin.product.platform=hi6250
-# ro.product.platform.pseudonym=1ARB9CV
-# ro.config.hw_smart_shrink=true
-# ro.comp.chipset_version=Chipset-chicago 9.1.0.6(15F1)
-
-# Logs
-persist.log.tag.hwcomposer=S
-
-# Wifi
-wifi.direct.interface=p2p-dev-wlan0
-
-# A-GPS
-ro.hardware.hisupl=hi1102
-
+# Charger
+ro.charger.disable_init_blank=true
