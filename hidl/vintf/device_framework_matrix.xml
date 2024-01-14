@@ -467,11 +467,19 @@
             <instance>default</instance>
         </interface>
      </hal>
-     <hal format="hidl">
+     <hal format="hidl" optional="true">
         <name>android.hardware.drm</name>
         <transport>hwbinder</transport>
-        <fqname>@1.2::ICryptoFactory/widevine</fqname>
-        <fqname>@1.2::IDrmFactory/widevine</fqname>
+        <version>1.2</version>
+        <interface>
+            <name>ICryptoFactory</name>
+            <instance>widevine</instance>
+        </interface>
+        <interface>
+            <name>IDrmFactory</name>
+            <instance>widevine</instance>
+            <instance>clearkey</instance>
+        </interface>
      </hal>
      <hal format="hidl" optional="true">
      <name>android.hardware.graphics.mapper</name>
@@ -542,5 +550,6 @@
             <name>ILights</name>
             <instance>default</instance>
         </interface>
+        <fqname>ILights/default</fqname>
     </hal>
 </compatibility-matrix>
