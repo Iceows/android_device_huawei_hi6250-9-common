@@ -74,10 +74,9 @@
 /dev/nxp_smartpa_dev		0660	media media
 /dev/sensorhub				0664	system system
 /dev/motionhub				0664	system system
+/dev/tc_ns_client			0664 	system system
 
 /sys/class/sensors/libsensor_ver	0664	system system
-
-
 
 /dev/block/mmcblk0p4 				0660 	system 	system
 
