@@ -6,7 +6,7 @@
 #
 
 # Audio Hardware
--vendor/lib64/hw/audio.primary.hi6250.so
+-vendor/lib64/hw/audio.primary.hisi.so:vendor/lib64/hw/audio.primary_hisi.hi6250.so
 -vendor/lib64/libasd.so
 -vendor/lib64/libaudio_custom.so
 -vendor/lib64/libaudiodump.so
@@ -27,6 +27,10 @@ vendor/etc/audio_policy_configuration.xml
 -vendor/lib64/soundfx/libhuaweiprocessing.so
 -vendor/lib64/soundfx/liboffloadvisualizer.so
 -vendor/lib64/libhuaweiaudioeffectutil.so
+
+# Gatekeeper
+-vendor/lib64/hw/gatekeeper.hi6250.so
+-vendor/lib/hw/gatekeeper.hi6250.so
 
 # Bluetooth Config
 vendor/etc/bluetooth/bt_vendor.conf
@@ -242,6 +246,22 @@ vendor/etc/init/vendor.huawei.hardware.biometrics.fingerprint@2.1-service.rc
 -vendor/lib64/vendor.huawei.hardware.iawareperf@1.0.so
 vendor/usr/idc/fingerprint.idc
 
+# FM Radio
+-lib/libfm_jni.so:lib/libfm_jni.so
+-lib/libHidlUtil.so
+-lib/vendor.huawei.hardware.fm@1.0.so:MODULE=vendor_huawei_fm_system
+-lib64/libfm_jni.so:lib64/libfm_jni.so
+-lib64/libHidlUtil.so
+-lib64/vendor.huawei.hardware.fm@1.0.so:MODULE=vendor_huawei_fm_system
+-vendor/bin/hw/vendor.huawei.hardware.fm@1.0-service
+vendor/etc/init/vendor.huawei.hardware.fm@1.0-service.rc
+-vendor/lib/hw/fm.hisi.hi6250.so
+-vendor/lib/vendor.huawei.hardware.fm@1.0.so
+-vendor/lib64/vendor.huawei.hardware.fm@1.0-impl.so:vendor/lib64/hw/vendor.huawei.hardware.fm@1.0-impl.so
+-vendor/lib64/hw/fm.hisi.hi6250.so
+-vendor/lib64/vendor.huawei.hardware.fm@1.0.so
+
+
 # Firmware
 vendor/firmware/ts/Nemo_CS445A_default.bin
 vendor/firmware/ts/Nemo_CS445A_junda.bin
@@ -433,6 +453,12 @@ vendor/etc/perfgenius_scenario_policy.xml
 -vendor/lib64/liboeminfo.so
 -vendor/lib64/libxcollie.so
 
+# NFC Secure Element
+-vendor/lib64/ese_hw_hal.so
+-vendor/lib/ese_hw_hal.so
+-vendor/bin/hw/android.hardware.secure_element@1.0-service:vendor/bin/hw/android.hardware.secure_element@1.0-service.hisi
+vendor/etc/init/android.hardware.secure_element@1.0-service.rc
+
 # Modem
 vendor/etc/modemConfig/balong/basic_name
 vendor/etc/modemConfig/balong/FieldTest.cfg
@@ -571,13 +597,19 @@ vendor/etc/native_packages.xml:vendor/etc/native_packages.bin
 -vendor/lib/libteec.so
 -vendor/lib/libteec_eid.so
 -vendor/lib/libteec_vendor.so
+-vendor/lib/libstorekeybox.so
+-vendor/lib/libkeymaster3_attestation.so
 -vendor/lib/vendor.huawei.hardware.libteec@2.0.so
 -vendor/lib64/hw/vendor.huawei.hardware.libteec@2.0-impl.so
 -vendor/lib64/libteec.so
 -vendor/lib64/libteec_eid.so
 -vendor/lib64/libteec_vendor.so
+-vendor/lib64/libstorekeybox.so
+-vendor/lib64/libkeymaster3_attestation.so
 -vendor/lib64/vendor.huawei.hardware.libteec@2.0.so
 -vendor/bin/tlogcat
+-vendor/lib64/hw/keystore.hi6250.so
+-vendor/lib/hw/keystore.hi6250.so
 
 # Thermal
 -vendor/lib/hw/thermal.hi6250.so
