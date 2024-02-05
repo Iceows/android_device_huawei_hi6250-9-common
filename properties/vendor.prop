@@ -131,3 +131,7 @@ persist.media.usbvoice.name=USB-Audio - HUAWEI GLASS
 # A-GPS
 ro.hardware.hisupl=hi1102
 
+# FM Radio
+ro.odm.config.fm.disable=false
+
+
