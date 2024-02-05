@@ -197,7 +197,6 @@ PRODUCT_COPY_FILES += \
 
 # Hisi
 PRODUCT_PACKAGES += \
-    mploader \
     hisi_init \
     libchrlog \
     libhwlog \
