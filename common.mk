@@ -191,10 +191,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
-# Hisi init package
+# Hisi
 PRODUCT_PACKAGES += \
     mploader \
     hisi_init \
+    libchrlog \
+    libhwlog \
     libxcollie
 
 # Vibrator
