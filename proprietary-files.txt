@@ -249,10 +249,10 @@ vendor/usr/idc/fingerprint.idc
 # FM Radio
 -lib/libfm_jni.so:lib/libfm_jni.so
 -lib/libHidlUtil.so
--lib/vendor.huawei.hardware.fm@1.0.so:MODULE=vendor_huawei_fm_system
+-lib/vendor.huawei.hardware.fm@1.0.so;MODULE=vendor_huawei_fm_system
 -lib64/libfm_jni.so:lib64/libfm_jni.so
 -lib64/libHidlUtil.so
--lib64/vendor.huawei.hardware.fm@1.0.so:MODULE=vendor_huawei_fm_system
+-lib64/vendor.huawei.hardware.fm@1.0.so;MODULE=vendor_huawei_fm_system
 -vendor/bin/hw/vendor.huawei.hardware.fm@1.0-service
 vendor/etc/init/vendor.huawei.hardware.fm@1.0-service.rc
 -vendor/lib/hw/fm.hisi.hi6250.so
@@ -433,7 +433,6 @@ vendor/etc/perfgenius_scenario_policy.xml
 -vendor/lib/libjtag_wdt_ctrl.so
 -vendor/lib/libnvme.so
 -vendor/lib/liboeminfo.so
--vendor/lib/libxcollie.so
 -vendor/lib64/lib_device_interface.so
 -vendor/lib64/lib_factory_interface.so
 -vendor/lib64/lib_mmi_interface.so
@@ -447,13 +446,14 @@ vendor/etc/perfgenius_scenario_policy.xml
 -vendor/lib64/libjtag_wdt_ctrl.so
 -vendor/lib64/libnvme.so
 -vendor/lib64/liboeminfo.so
--vendor/lib64/libxcollie.so
+
 
 # NFC Secure Element
--vendor/lib64/ese_hw_hal.so
--vendor/lib/ese_hw_hal.so
--vendor/bin/hw/android.hardware.secure_element@1.0-service:vendor/bin/hw/android.hardware.secure_element@1.0-service.hisi
+vendor/bin/hw/android.hardware.secure_element@1.0-service:vendor/bin/hw/android.hardware.secure_element@1.0-service-hisi
 vendor/etc/init/android.hardware.secure_element@1.0-service.rc
+-vendor/lib/ese_hw_hal.so
+-vendor/lib64/ese_hw_hal.so
+
 
 # Modem
 vendor/etc/modemConfig/balong/basic_name

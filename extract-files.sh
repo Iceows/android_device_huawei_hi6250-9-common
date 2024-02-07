@@ -60,10 +60,13 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        vendor/etc/android.hardware.secure_element@1.0-service.rc)
+        vendor/etc/init/android.hardware.secure_element@1.0-service.rc)
             sed -i 's/android.hardware.secure_element@1.0-service/android.hardware.secure_element@1.0-service-hisi/g' "${2}"
-            ;;    
-	vendor/lib*/hw/audio.primary.hi6250.so|vendor/lib*/libhivwservice.so|vendor/lib*/hw/audio.primary_hisi.hi6250.so)
+            ;;
+        vendor/etc/init/android.hardware.keymaster@3.0-service.rc)
+            sed -i 's/android.hardware.keymaster@3.0-service/android.hardware.keymaster@3.0-service-hisi/g' "${2}"
+            ;;  
+        vendor/lib*/hw/audio.primary.hi6250.so|vendor/lib*/libhivwservice.so|vendor/lib*/hw/audio.primary_hisi.hi6250.so)
 	    "${PATCHELF}" --add-needed "libprocessgroup.so" "${2}"
 	    ;;
 	vendor/lib*/hw/gralloc.hi6250.so)
