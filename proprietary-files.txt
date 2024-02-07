@@ -449,7 +449,7 @@ vendor/etc/perfgenius_scenario_policy.xml
 
 
 # NFC Secure Element
-vendor/bin/hw/android.hardware.secure_element@1.0-service:vendor/bin/hw/android.hardware.secure_element@1.0-service-hisi
+-vendor/bin/hw/android.hardware.secure_element@1.0-service:vendor/bin/hw/android.hardware.secure_element@1.0-service-hisi
 vendor/etc/init/android.hardware.secure_element@1.0-service.rc
 -vendor/lib/ese_hw_hal.so
 -vendor/lib64/ese_hw_hal.so
