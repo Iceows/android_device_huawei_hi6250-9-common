@@ -61,11 +61,8 @@ fi
 function blob_fixup() {
     case "${1}" in
         vendor/etc/init/android.hardware.secure_element@1.0-service.rc)
-            sed -i 's/android.hardware.secure_element@1.0-service/android.hardware.secure_element@1.0-service-hisi/g' "${2}"
+            sed -i 's/android.hardware.secure_element@1.0-service/android.hardware.secure_element@1.0-service.hisi/g' "${2}"
             ;;
-        vendor/etc/init/android.hardware.keymaster@3.0-service.rc)
-            sed -i 's/android.hardware.keymaster@3.0-service/android.hardware.keymaster@3.0-service-hisi/g' "${2}"
-            ;;  
         vendor/lib*/hw/audio.primary.hi6250.so|vendor/lib*/libhivwservice.so|vendor/lib*/hw/audio.primary_hisi.hi6250.so)
 	    "${PATCHELF}" --add-needed "libprocessgroup.so" "${2}"
 	    ;;
@@ -78,6 +75,9 @@ function blob_fixup() {
 	vendor/lib*/libxcollie.so)
 	    "${PATCHELF}" --add-needed "libunwindstack_v28.so" "${2}"
 	    ;;
+        vendor/lib*/libimonitor.so)
+            "${PATCHELF}" --add-needed "libshim_log.so" "${2}"
+            ;;
         vendor/etc/libnfc-brcm.conf)
             sed -i 's\/data/nfc\/data/vendor/nfc\g' "${2}"
             ;;

@@ -449,7 +449,7 @@ vendor/etc/perfgenius_scenario_policy.xml
 
 
 # NFC Secure Element
--vendor/bin/hw/android.hardware.secure_element@1.0-service:vendor/bin/hw/android.hardware.secure_element@1.0-service-hisi
+-vendor/bin/hw/android.hardware.secure_element@1.0-service:vendor/bin/hw/android.hardware.secure_element@1.0-service.hisi
 vendor/etc/init/android.hardware.secure_element@1.0-service.rc
 -vendor/lib/ese_hw_hal.so
 -vendor/lib64/ese_hw_hal.so
@@ -606,13 +606,10 @@ vendor/etc/native_packages.xml:vendor/etc/native_packages.bin
 -vendor/bin/tlogcat
 
 # Keystore/Keymaster3
--vendor/bin/hw/android.hardware.keymaster@3.0-service:vendor/bin/hw/android.hardware.keymaster@3.0-service-hisi
 vendor/etc/init/android.hardware.keymaster@3.0-service.rc
--vendor/lib/hw/android.hardware.keymaster@3.0-impl.so
-# vendor/lib/android.hardware.keymaster@3.0.so
+-vendor/lib/hw/android.hardware.keymaster@3.0-impl.so:vendor/lib/hw/android.hardware.keymaster@3.0-impl.hisi.so
 -vendor/lib/hw/keystore.hi6250.so
--vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so
-# vendor/lib64/android.hardware.keymaster@3.0.so
+-vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so:vendor/lib64/hw/android.hardware.keymaster@3.0-impl.hisi.so
 -vendor/lib64/hw/keystore.hi6250.so
 
 
