@@ -1,11 +1,4 @@
 on init
-#mount secure storage partition for teeos
-    #mkdir /sec_storage
-     mount ext4 /dev/block/bootdevice/by-name/secure_storage /sec_storage nosuid nodev noatime wait crypt discard,auto_da_alloc,mblk_io_submit,data=journal,context=u:object_r:teecd_data_file:s0
-     chown root root /sec_storage
-     chmod 600 /sec_storage
-
-on init
 #add for TrustedCore driver
     chmod 0400 /dev/hisi_teelog
 
@@ -16,15 +9,14 @@ service teeauth /system/bin/tee_auth_daemon
     class core
     user root
     group root system readproc
-    seclabel u:r:system_teecd:s0
+    seclabel u:r:teecd_auth:s0
 
 service teecd /vendor/bin/teecd
     class early_hal
     user root
     group root system readproc
-	disabled
+    disabled
     seclabel u:r:tee:s0
-
 
 service teelogcat /vendor/bin/tlogcat -f
     class late_start
@@ -33,14 +25,17 @@ service teelogcat /vendor/bin/tlogcat -f
     disabled
     seclabel u:r:tlogcat:s0
 
-# set sec_storage_data can be access by teecd
+# TEE set sec_storage_data can be access by teecd to store fingerprint infos
 on fs
+    mkdir /data/sec_storage_data 0700 system system encryption=None
+    restorecon /data/sec_storage_data
+    mkdir /data/sec_storage_data_users 0700 system system encryption=None
+    restorecon /data/sec_storage_data_users
+    start teecd
+    
+# TEE logging
+on post-fs-data
     mkdir /data/vendor/log/sec_storage_data 0775 system system
     mkdir /data/vendor/log/sec_storage_data/log 0755 system system
-	start teecd
 
-
-on post-fs-data
-   mkdir /data/vendor/log/sec_storage_data 0775 system system
-   mkdir /data/vendor/log/sec_storage_data/log 0755 system system
 
