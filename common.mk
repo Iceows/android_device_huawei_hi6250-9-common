@@ -176,13 +176,13 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/fstab.hi6250:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.hi6250 \
     $(COMMON_PATH)/configs/init/fstab.modem:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.modem
 
-# Keymaster
+# Keymaster (replace after .rc and link -impl.so with original huawei -impl.so)
+# Don't rename -service.so the service name is stock in native_packages.xml
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0 \
-    libkeymaster3device
-    
-# KeyStore wifi
+    android.hardware.keymaster@3.0-service
+
 PRODUCT_PACKAGES += \
+    libkeymaster3device.vendor \
     libkeystore-engine-wifi-hidl \
     libkeystore-wifi-hidl
 
