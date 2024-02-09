@@ -12,3 +12,4 @@ type version_file, file_type;
 
 # TEE
 type teecd_data_file, file_type;
+type teecd_data_file_system, file_type;
