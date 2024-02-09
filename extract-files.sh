@@ -75,6 +75,9 @@ function blob_fixup() {
 	vendor/lib*/libxcollie.so)
 	    "${PATCHELF}" --add-needed "libunwindstack_v28.so" "${2}"
 	    ;;
+        vendor/lib*/libimonitor.so)
+            "${PATCHELF}" --add-needed "libshim_log.so" "${2}"
+            ;;
         vendor/etc/libnfc-brcm.conf)
             sed -i 's\/data/nfc\/data/vendor/nfc\g' "${2}"
             ;;
