@@ -362,4 +362,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libpn551_fw
 
+# FM Radio Hardware
+PRODUCT_PACKAGES += \
+    hwfm_service
+
 include hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk
