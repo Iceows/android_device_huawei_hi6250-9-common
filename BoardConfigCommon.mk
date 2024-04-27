@@ -74,6 +74,9 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
 TARGET_KERNEL_CLANG_VERSION := r416183b1
 TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-$(TARGET_KERNEL_CLANG_VERSION)
 
+# SurfaceFlinger
+TARGET_DISABLE_TRIPLE_BUFFERING := true
+
 # Kernel Source
 TARGET_KERNEL_CONFIG := merge_hi6250_defconfig
 TARGET_KERNEL_SOURCE := kernel/huawei/hi6250-9
