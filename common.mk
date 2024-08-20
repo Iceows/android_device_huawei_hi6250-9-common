@@ -329,6 +329,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/huawei \
+    hardware/hisi \
     hardware/huawei/power
 
 # Shims
