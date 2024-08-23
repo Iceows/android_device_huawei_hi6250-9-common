@@ -6,7 +6,7 @@
 #
 
 # Audio Hardware
--vendor/lib64/hw/audio.primary.hisi.so:vendor/lib64/hw/audio.primary_hisi.hi6250.so
+-vendor/lib64/hw/audio.primary.hisi.so:vendor/lib64/hw/audio.primary.hi6250.so
 -vendor/lib64/libasd.so
 -vendor/lib64/libaudio_custom.so
 -vendor/lib64/libaudiodump.so
@@ -32,12 +32,10 @@ vendor/etc/audio_policy_configuration.xml
 -vendor/lib64/hw/gatekeeper.hi6250.so
 -vendor/lib/hw/gatekeeper.hi6250.so
 
-# Bluetooth Config
+# Bluetooth
 vendor/etc/bluetooth/bt_vendor.conf
-
-# Bluetooth HAL - pinned libbt-vendor-hisi.so from ANE-LGRP2-OVS 9.1.0.401
--vendor/lib/libbt-vendor.so|02afd94b3d428c9100114b8b513f9cd38cb7fd11
--vendor/lib64/libbt-vendor.so|67c8f432eeed790a8ee79ed59d8978d2ead329e7
+-vendor/lib64/libbt-vendor.so:vendor/lib64/libbt-vendor-bcm.so
+-vendor/lib64/libbt-vendor-hisi.so
 
 # Camera
 -vendor/bin/CameraDaemon
@@ -234,17 +232,18 @@ vendor/etc/camera/watermark/param.xml
 vendor/etc/init/vendor.huawei.hardware.biometrics.fingerprint@2.1-service.rc
 -vendor/lib/hw/fingerprint.hi6250.so
 -vendor/lib/lib_fpc_tac_shared.so
--vendor/lib/libiawareperf_client.so
--vendor/lib/vendor.huawei.hardware.biometrics.fingerprint@2.1.so
--vendor/lib/vendor.huawei.hardware.hwvibrator@1.0.so
--vendor/lib/vendor.huawei.hardware.iawareperf@1.0.so
+-vendor/lib/libfaccommon_share.so
+-vendor/lib/libfacsignedapi_share.so
 -vendor/lib64/hw/fingerprint.hi6250.so
 -vendor/lib64/lib_fpc_tac_shared.so
--vendor/lib64/libiawareperf_client.so
--vendor/lib64/vendor.huawei.hardware.biometrics.fingerprint@2.1.so
+-vendor/lib64/libfaccommon_share.so
+-vendor/lib64/libfacsignedapi_share.so
+vendor/usr/idc/fingerprint.idc
+
+# Misc
 -vendor/lib64/vendor.huawei.hardware.hwvibrator@1.0.so
 -vendor/lib64/vendor.huawei.hardware.iawareperf@1.0.so
-vendor/usr/idc/fingerprint.idc
+
 
 # FM Radio
 -lib/libfm_jni.so:lib/libfm_jni.so
@@ -429,7 +428,6 @@ vendor/etc/perfgenius_scenario_policy.xml
 -vendor/lib/libfacsignedapi_share.so
 -vendor/lib/libhivwservice.so
 -vendor/lib/libhuaweicust.so
--vendor/lib/libimonitor.so
 -vendor/lib/libjtag_wdt_ctrl.so
 -vendor/lib/libnvme.so
 -vendor/lib/liboeminfo.so
@@ -442,7 +440,6 @@ vendor/etc/perfgenius_scenario_policy.xml
 -vendor/lib64/libfacsignedapi_share.so
 -vendor/lib64/libhivwservice.so
 -vendor/lib64/libhuaweicust.so
--vendor/lib64/libimonitor.so
 -vendor/lib64/libjtag_wdt_ctrl.so
 -vendor/lib64/libnvme.so
 -vendor/lib64/liboeminfo.so
@@ -482,7 +479,7 @@ vendor/modem/modem_fw/readme.txt
 -vendor/lib/libbalong-ril.so
 -vendor/lib/libbalong-ril-1.so
 -vendor/lib/libcommril.so
--vendor/lib/libril.so
+-vendor/lib/libril.so:vendor/lib/libril-hisi.so
 -vendor/lib/lib_wifi_sar.so
 -vendor/lib/vendor.huawei.hardware.hisiradio@1.0.so
 -vendor/lib/vendor.huawei.hardware.hisiradio@1.1.so
@@ -493,7 +490,7 @@ vendor/modem/modem_fw/readme.txt
 -vendor/lib64/libbalong-ril.so
 -vendor/lib64/libbalong-ril-1.so
 -vendor/lib64/libcommril.so
--vendor/lib64/libril.so
+-vendor/lib64/libril.so:vendor/lib64/libril-hisi.so
 -vendor/lib64/lib_wifi_sar.so
 -vendor/lib64/vendor.huawei.hardware.hisiradio@1.0.so
 -vendor/lib64/vendor.huawei.hardware.hisiradio@1.1.so
@@ -517,11 +514,13 @@ vendor/etc/init/vendor.huawei.hardware.sensors@1.0-service.rc
 etc/native_packages.xml:etc/native_packages.bin
 -lib/libc_secshared.so;MODULE=libc_secshared_system
 -lib/libteec_client.so
+-lib/libteeclientjni.so
 -lib/libtuidaemon.so
 -lib/vendor.huawei.hardware.libteec@1.0.so
 -lib/vendor.huawei.hardware.libteec@2.0.so;MODULE=vendor.huawei.hardware.libteec@2.0.so_system
 -lib64/libc_secshared.so;MODULE=libc_secshared_system
 -lib64/libteec_client.so
+-lib64/libteeclientjni.so
 -lib64/libtuidaemon.so
 -lib64/vendor.huawei.hardware.libteec@1.0.so
 -lib64/vendor.huawei.hardware.libteec@2.0.so;MODULE=vendor.huawei.hardware.libteec@2.0.so_system
@@ -587,9 +586,11 @@ etc/native_packages.xml:etc/native_packages.bin
 -vendor/bin/syna_155A_ta.sec
 -vendor/bin/syna_155A_ta_lldp.sec
 -vendor/bin/teecd
+-vendor/bin/tlogcat
 vendor/etc/init/vendor.huawei.hardware.libteec@2.0-service.rc
 vendor/etc/native_packages.xml:vendor/etc/native_packages.bin
 -vendor/lib/hw/vendor.huawei.hardware.libteec@2.0-impl.so
+-vendor/lib/libc_secshared.so
 -vendor/lib/libteec.so
 -vendor/lib/libteec_eid.so
 -vendor/lib/libteec_vendor.so
@@ -597,21 +598,20 @@ vendor/etc/native_packages.xml:vendor/etc/native_packages.bin
 -vendor/lib/libkeymaster3_attestation.so
 -vendor/lib/vendor.huawei.hardware.libteec@2.0.so
 -vendor/lib64/hw/vendor.huawei.hardware.libteec@2.0-impl.so
+-vendor/lib64/libc_secshared.so
 -vendor/lib64/libteec.so
 -vendor/lib64/libteec_eid.so
 -vendor/lib64/libteec_vendor.so
 -vendor/lib64/libstorekeybox.so
 -vendor/lib64/libkeymaster3_attestation.so
 -vendor/lib64/vendor.huawei.hardware.libteec@2.0.so
--vendor/bin/tlogcat
 
-# Keystore/Keymaster3
+# Keystore
 vendor/etc/init/android.hardware.keymaster@3.0-service.rc
--vendor/lib/hw/android.hardware.keymaster@3.0-impl.so:vendor/lib/hw/android.hardware.keymaster@3.0-impl.hisi.so
 -vendor/lib/hw/keystore.hi6250.so
--vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so:vendor/lib64/hw/android.hardware.keymaster@3.0-impl.hisi.so
+-vendor/lib/hw/android.hardware.keymaster@3.0-impl.so:vendor/lib/hw/android.hardware.keymaster@3.0-impl-hisi.so
 -vendor/lib64/hw/keystore.hi6250.so
-
+-vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so:vendor/lib64/hw/android.hardware.keymaster@3.0-impl-hisi.so
 
 # Thermal
 -vendor/lib/hw/thermal.hi6250.so

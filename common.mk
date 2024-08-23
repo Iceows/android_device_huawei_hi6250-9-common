@@ -82,13 +82,11 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4.vendor \
-    camera.device@1.0-impl \
-    camera.device@3.2-impl \
-    camera.device@3.3-impl \
-    camera.device@3.4-external-impl \
-    camera.device@3.4-impl \
-    libstdc++.vendor
+    android.hardware.camera.provider@2.4-impl
+
+PRODUCT_PACKAGES += \
+    libstdc++.vendor \
+    libui_shim.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -99,24 +97,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-lite-v29
 
-# ConfigStore (only service)
+# ConfigStore
 PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.1-service
+    disable_configstore
 
-# Fingerprint sensor
+# Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service
-#    android.hardware.biometrics.fingerprint@2.1.vendor
+    vendor.huawei.hardware.biometrics.fingerprint@2.1.vendor
 
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
-# Gatekeeper HAL
+# Gatekeeper
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
+    android.hardware.gatekeeper@1.0-service \
+    android.hardware.gatekeeper@1.0-impl
 
 # Graphics
 PRODUCT_PACKAGES += \
@@ -128,6 +125,9 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.graphics.common@1.0_types.vendor \
     libion
+
+PRODUCT_PACKAGES += \
+    libui-v28
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -169,6 +169,7 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/init.recovery.hi6250.rc:$(TARGET_RECOVERY_OUT)/root/init.recovery.hi6250.rc \
     $(COMMON_PATH)/configs/init/init.tee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.tee.rc \
     $(COMMON_PATH)/configs/init/init.vowifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vowifi.rc \
+    $(COMMON_PATH)/configs/init/debug-log-oss.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/debug-log-oss.rc \
     $(COMMON_PATH)/configs/init/ueventd.hi6250.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
     $(COMMON_PATH)/configs/init/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.rc
 
@@ -196,16 +197,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+
 # Hisi
 PRODUCT_PACKAGES += \
-    hisi_init \
+    hisi_init
+
+# Huawei (stubs)
+PRODUCT_PACKAGES += \
     libchrlog \
     libhwlog \
+    libimonitor \
     libxcollie
-    
-# For libimonitor
-PRODUCT_PACKAGES += \
-    libshim_log
     
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -255,7 +257,6 @@ PRODUCT_PACKAGES += \
 # NFC SecureElement (Hisi version)
 PRODUCT_COPY_FILES += \
      frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml
-
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -321,6 +322,7 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.6.vendor \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
+    libril \
     librilutils
 
 # Soong namespaces

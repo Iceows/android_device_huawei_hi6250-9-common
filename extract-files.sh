@@ -78,6 +78,18 @@ function blob_fixup() {
         vendor/lib*/libimonitor.so)
             "${PATCHELF}" --add-needed "libshim_log.so" "${2}"
             ;;
+        vendor/lib*/hw/hwcomposer.hi6250.so)
+            "${PATCHELF}" --replace-needed "libui.so" "libui-v28.so" "${2}"
+            ;;
+        vendor/lib64/libbt-vendor-bcm.so)
+            "${PATCHELF}" --set-soname "libbt-vendor-bcm.so" "${2}"
+            ;;
+        vendor/lib*/libril-hisi.so)
+            "${PATCHELF}" --set-soname "libril-hisi.so" "${2}"
+            ;;
+        vendor/lib*/libwvhidl.so)
+            "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
+            ;;
         vendor/etc/libnfc-brcm.conf)
             sed -i 's\/data/nfc\/data/vendor/nfc\g' "${2}"
             ;;
