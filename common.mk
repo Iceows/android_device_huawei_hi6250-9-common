@@ -43,6 +43,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@4.0-impl \
     android.hardware.audio.service.hisi \
     android.hardware.bluetooth.audio@2.1-impl
+    
 
 PRODUCT_PACKAGES += \
     audio.primary.hi6250 \
@@ -79,6 +80,9 @@ TARGET_EXCLUDES_AUDIOFX := true
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service
+
+PRODUCT_PACKAGES += \
+    libbt-vendor
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -170,8 +174,8 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/init.tee.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.tee.rc \
     $(COMMON_PATH)/configs/init/init.vowifi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.vowifi.rc \
     $(COMMON_PATH)/configs/init/debug-log-oss.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/debug-log-oss.rc \
-    $(COMMON_PATH)/configs/init/ueventd.hi6250.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
-    $(COMMON_PATH)/configs/init/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.rc
+    $(COMMON_PATH)/configs/init/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.rc \
+    $(COMMON_PATH)/configs/init/ueventd.hi6250.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
 # Fstab
 PRODUCT_COPY_FILES += \
@@ -237,7 +241,13 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service \
     com.android.future.usb.accessory
 
-
+# NFC
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2-service \
+    com.android.nfc_extras \
+    NfcNci \
+    Tag
+    
 # NFC
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
@@ -245,15 +255,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
-
-
-# P20 lite use pn551 chipset - NXP repo is android_hardware_nxp_nfc
+    
+# Secure Element
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service \
-    com.android.nfc_extras \
-    NfcNci \
-    Tag
-   
+    android.hardware.nfc@1.2.vendor \
+    android.hardware.secure_element@1.0.vendor
+    
 # NFC SecureElement (Hisi version)
 PRODUCT_COPY_FILES += \
      frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml

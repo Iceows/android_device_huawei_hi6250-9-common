@@ -1,6 +1,6 @@
 #
 # Vendor Blobs for hi6250-common - ANE-LGRP2-OVS 9.1.0.401
-# [ro.build.fingerprint]: [HUAWEI/ANE-LX1/HWANE:9/HUAWEIANE-L01/9.1.0.355C109:user/release-keys]
+# [ro.build.fingerprint]: [HUAWEI/ANE-LX1/HWANE:9/HUAWEIANE-L01/9.1.0.368C109:user/release-keys]
 # [ro.huawei.build.fingerprint]: [HUAWEI/ANE-LX1/HWANE:9/HUAWEIANE-L01/9.1.0.410C109:user/release-keys]
 # 
 #
@@ -241,8 +241,12 @@ vendor/etc/init/vendor.huawei.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/usr/idc/fingerprint.idc
 
 # Misc
+-vendor/lib/vendor.huawei.hardware.hwvibrator@1.0.so
+-vendor/lib/vendor.huawei.hardware.iawareperf@1.0.so
+-vendor/lib/libiawareperf_client.so
 -vendor/lib64/vendor.huawei.hardware.hwvibrator@1.0.so
 -vendor/lib64/vendor.huawei.hardware.iawareperf@1.0.so
+-vendor/lib64/libiawareperf_client.so
 
 
 # FM Radio
@@ -444,13 +448,11 @@ vendor/etc/perfgenius_scenario_policy.xml
 -vendor/lib64/libnvme.so
 -vendor/lib64/liboeminfo.so
 
-
 # NFC Secure Element
 -vendor/bin/hw/android.hardware.secure_element@1.0-service:vendor/bin/hw/android.hardware.secure_element@1.0-service.hisi
 vendor/etc/init/android.hardware.secure_element@1.0-service.rc
 -vendor/lib/ese_hw_hal.so
 -vendor/lib64/ese_hw_hal.so
-
 
 # Modem
 vendor/etc/modemConfig/balong/basic_name
@@ -479,7 +481,7 @@ vendor/modem/modem_fw/readme.txt
 -vendor/lib/libbalong-ril.so
 -vendor/lib/libbalong-ril-1.so
 -vendor/lib/libcommril.so
--vendor/lib/libril.so:vendor/lib/libril-hisi.so
+-vendor/lib64/libril.so
 -vendor/lib/lib_wifi_sar.so
 -vendor/lib/vendor.huawei.hardware.hisiradio@1.0.so
 -vendor/lib/vendor.huawei.hardware.hisiradio@1.1.so
@@ -490,7 +492,7 @@ vendor/modem/modem_fw/readme.txt
 -vendor/lib64/libbalong-ril.so
 -vendor/lib64/libbalong-ril-1.so
 -vendor/lib64/libcommril.so
--vendor/lib64/libril.so:vendor/lib64/libril-hisi.so
+-vendor/lib64/libril.so
 -vendor/lib64/lib_wifi_sar.so
 -vendor/lib64/vendor.huawei.hardware.hisiradio@1.0.so
 -vendor/lib64/vendor.huawei.hardware.hisiradio@1.1.so

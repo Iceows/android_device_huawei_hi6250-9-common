@@ -60,10 +60,7 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        vendor/etc/init/android.hardware.secure_element@1.0-service.rc)
-            sed -i 's/android.hardware.secure_element@1.0-service/android.hardware.secure_element@1.0-service.hisi/g' "${2}"
-            ;;
-        vendor/lib*/hw/audio.primary.hi6250.so|vendor/lib*/libhivwservice.so|vendor/lib*/hw/audio.primary_hisi.hi6250.so)
+       vendor/lib*/hw/audio.primary.hi6250.so|vendor/lib*/libhivwservice.so|vendor/lib*/hw/audio.primary_hisi.hi6250.so)
 	    "${PATCHELF}" --add-needed "libprocessgroup.so" "${2}"
 	    ;;
 	vendor/lib*/hw/gralloc.hi6250.so)
@@ -84,9 +81,6 @@ function blob_fixup() {
         vendor/lib64/libbt-vendor-bcm.so)
             "${PATCHELF}" --set-soname "libbt-vendor-bcm.so" "${2}"
             ;;
-        vendor/lib*/libril-hisi.so)
-            "${PATCHELF}" --set-soname "libril-hisi.so" "${2}"
-            ;;
         vendor/lib*/libwvhidl.so)
             "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
             ;;
@@ -95,6 +89,9 @@ function blob_fixup() {
             ;;
         vendor/etc/libnfc-nxp.conf)
             sed -i 's|libpn551_fw_10_05_03_64bits.so|libpn551_fw.so|g' "${2}"
+            ;;
+        vendor/etc/init/android.hardware.secure_element@1.0-service.rc)
+            sed -i 's/android.hardware.secure_element@1.0-service/android.hardware.secure_element@1.0-service.hisi/g' "${2}"
             ;;
         vendor/etc/camera/*|odm/etc/camera/*)
             sed -i 's/gb2312/iso-8859-1/g' "${2}"
