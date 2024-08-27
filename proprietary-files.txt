@@ -481,7 +481,7 @@ vendor/modem/modem_fw/readme.txt
 -vendor/lib/libbalong-ril.so
 -vendor/lib/libbalong-ril-1.so
 -vendor/lib/libcommril.so
--vendor/lib64/libril.so
+-vendor/lib/libril.so
 -vendor/lib/lib_wifi_sar.so
 -vendor/lib/vendor.huawei.hardware.hisiradio@1.0.so
 -vendor/lib/vendor.huawei.hardware.hisiradio@1.1.so
