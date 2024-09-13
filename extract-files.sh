@@ -98,6 +98,10 @@ function blob_fixup() {
             sed -i 's/GB2312/iso-8859-1/g' "${2}"
             sed -i 's/xmlversion/xml version/g' "${2}"
             ;;
+        # Replace fmservice name by OSS fmservice name 
+        lib*/libfm_jni.so)
+            sed -i 's|com/huawei/android/hardware/fmradio/FmReceiverJNI|hisi/fmradio/FmReceiverJNI\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00|g' "${2}"
+            ;;
     esac
 }
 

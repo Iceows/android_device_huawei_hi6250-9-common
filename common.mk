@@ -111,8 +111,8 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
+    FMApp2-Hisi \
+    hisi.fmradio
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -345,6 +345,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/huawei \
     hardware/hisi \
+    hardware/hisi_fm \
     hardware/huawei/power
 
 # Shims
@@ -378,9 +379,5 @@ PRODUCT_COPY_FILES += \
 # NFC Firmware
 PRODUCT_PACKAGES += \
     libpn551_fw
-
-# FM Radio Hardware
-PRODUCT_PACKAGES += \
-    hwfm_service
 
 $(call inherit-product, $(COMMON_PATH)/system_prop.mk)
