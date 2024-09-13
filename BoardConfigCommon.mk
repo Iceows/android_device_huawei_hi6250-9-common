@@ -128,17 +128,15 @@ include device/hisi/sepolicy/SEPolicy.mk
 VENDOR_SECURITY_PATCH := 2022-01-01 # ANE-LGRP2-OVS 9.1.0.401
 
 # Wifi
-TARGET_USES_64_BIT_BCMDHD	 := true
-BOARD_WLAN_DEVICE                := bcmdhd
-BOARD_WLAN_DEVICE_REV            := bcm4345
-WPA_SUPPLICANT_VERSION := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_HOSTAPD_DRIVER := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcm43455_hw.bin"
-WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcm43455_apsta_hw.bin"
-WIFI_DRIVER_FW_PATH_P2P          := "/vendor/firmware/fw_bcm43455_hw.bin"
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_WLAN_DEVICE := bcmdhd
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+
+# Inherit the proprietary files
+include vendor/huawei/hi6250-9-common/BoardConfigVendor.mk
 

@@ -1,0 +1,85 @@
+# Copyright (C) 2008 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# For hisi connectivity
+
+
+on early-init
+    setprop ro.connectivity.chiptype "hisi"
+    setprop wifi.interface wlan0
+    setprop is_hisi_connectivity_chip 1
+    setprop ro.hardware.consumerir "hisi.hi6250"
+
+on init
+    chown bluetooth bluetooth /dev/hwbt
+
+on boot
+    # Bluetooth
+    chmod 660 /dev/ttyAMA4
+    chown bluetooth bluetooth /dev/ttyAMA4
+
+    # Bluetooth power up/down interface
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chmod 0774 /sys/class/rfkill/rfkill0/state
+
+     # Bluesleep start/stop interface
+     chown bluetooth bluetooth /proc/bluetooth/sleep/proto
+     chmod 664 /proc/bluetooth/sleep/proto
+     chown bluetooth bluetooth /proc/bluetooth/sleep/btwrite
+     chmod 664 /proc/bluetooth/sleep/btwrite
+     chown bluetooth bluetooth /proc/bluetooth/sleep/btwake
+     chmod 664 /proc/bluetooth/sleep/btwake
+
+    # Wifi
+    setprop wifi.interface wlan0
+    setprop wifi.direct.interface p2p0
+
+    # Enable apk to control the fwlog output
+    chown system system /sys/module/bcmdhd/parameters/dhd_console_ms
+    chown system system /sys/devices/platform/bcmdhd_wlan.1/wifi_arp_timeout
+    
+    # control vio from framework
+    chown system system /dev/vio
+
+    # control wifi firmware path
+    chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
+    chown wifi wifi /sys/module/bcmdhd/parameters/nvram_path
+
+on post-fs-data
+    mkdir /data/vendor/wifi 0771 wifi wifi
+    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+    mkdir /data/vendor/log/wifi 0770 wifi system
+    mkdir /data/vendor/bluedroid 0771 bluetooth bluetooth
+    
+    chmod 0660 /data/vendor/wifi/wpa/wpa_supplicant.conf
+    chmod 660 /dev/ttyAMA3
+    chown system system /dev/ttyAMA3
+
+    mkdir /data/vendor/gnss 0770 system system
+    mkdir /data/vendor/cust_conn 0770 system system
+
+    
+on property:sys.conn_macs.ready=1
+    # Bluetooth
+    chown bluetooth bluetooth /data/vendor/bluedroid/macbt
+    chmod 0666 /data/vendor/bluedroid/macbt
+    
+on property:bluetooth.log.file.create=true
+   mkdir /data/log/bt
+   chown bluetooth bluetooth /data/log/bt
+   chmod 775 /data/log/bt
+   setprop bluetooth.log.file.create false
+   chown bluetooth bluetooth /dev/hwbt

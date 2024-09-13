@@ -159,9 +159,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/init.audio.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.audio.rc \
     $(COMMON_PATH)/configs/init/init.balong_modem.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.balong_modem.rc \
-    $(COMMON_PATH)/configs/init/init.connectivity.bcm43455.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.connectivity.bcm43455.rc \
+    $(COMMON_PATH)/configs/init/init.connectivity.hisi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.connectivity.hisi.rc \
     $(COMMON_PATH)/configs/init/init.connectivity.gps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.connectivity.gps.rc \
-    $(COMMON_PATH)/configs/init/init.connectivity.hi1102.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.connectivity.hi1102.rc \
+    $(COMMON_PATH)/configs/init/init.connectivity.agps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.connectivity.agps.rc \
     $(COMMON_PATH)/configs/init/init.device.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.device.rc \
     $(COMMON_PATH)/configs/init/init.hi6250.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.hi6250.rc \
     $(COMMON_PATH)/configs/init/init.hisi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.hisi.rc \
@@ -218,14 +218,20 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
 
-# Wifi
+# WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
-    WifiOverlay \
     wpa_supplicant \
-    wpa_supplicant.conf \
+    wpa_supplicant.conf
+
+PRODUCT_PACKAGES += \
+    WifiOverlay \
     TetheringConfigOverlay
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -377,4 +383,4 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     hwfm_service
 
-include hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk
+$(call inherit-product, $(COMMON_PATH)/system_prop.mk)
