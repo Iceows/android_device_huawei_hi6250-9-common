@@ -245,6 +245,17 @@ on property:vold.decrypt=trigger_shutdown_framework
 on start_main_class
     class_start main
 
+service vendor.folio_daemon /system/bin/folio_daemon
+    class late_start
+    user system
+    group system uhid
+    disabled
+
+on property:init.svc.zygote=running
+    start vendor.folio_daemon
+on property:init.svc.zygote=stopped
+    stop vendor.folio_daemon
+
 on start_latestart_class
     class_start late_start
 
