@@ -114,6 +114,10 @@ PRODUCT_PACKAGES += \
     FMApp2-Hisi \
     hisi.fmradio
 
+# Folio
+PRODUCT_PACKAGES += \
+    folio_daemon
+
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service \
