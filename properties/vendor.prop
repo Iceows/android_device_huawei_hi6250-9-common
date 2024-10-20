@@ -43,6 +43,7 @@ bluetooth.profile.sap.server.enabled?=true
 
 persist.sys.bt.esco_transport_unit_size=16
 persist.sys.bt.unsupported.states=182
+bluetooth.le.disable_apcf_extended_features=1
 
 # Gatekeeper
 ro.hardware.gatekeeper=hi6250
