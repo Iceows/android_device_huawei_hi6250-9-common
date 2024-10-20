@@ -27,7 +27,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-     android.hardware.power-service.hisi
+     android.hardware.power-service.pixel-libperfmgr
 
 # Control groups and task profiles (vndk 28)
 PRODUCT_COPY_FILES += \
@@ -199,7 +199,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.hisi
+    android.hardware.light-service.huawei
 
 # Linker
 PRODUCT_COPY_FILES += \
