@@ -55,9 +55,19 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/hidl/vintf/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/hidl/vintf/compatibility_matrix.xml
 
-# Kernel
+# Kernel (boot)
 BOARD_CUSTOM_BOOTIMG := true
-BOARD_CUSTOM_BOOTIMG_MK := $(COMMON_PATH)/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_HAS_RAMDISK := false
+BOARD_CUSTOM_BOOTIMG_MK := hardware/huawei/mkbootimg.mk
+
+# Partitions
+BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_BOOTIMAGE_PARTITION_SIZE := 25165824
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
+BOARD_RECVENDORIMAGE_PARTITION_SIZE := 16777216
+
+
+# Kernel
 BOARD_KERNEL_BASE := 0x00478000
 BOARD_KERNEL_CMDLINE := loglevel=4 coherent_pool=512K page_tracker=on slub_min_objects=12 unmovable_isolate1=2:192M,3:224M,4:256M printktimer=0xfff0a000,0x534,0x538 androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz
