@@ -1,0 +1,47 @@
+# Devices
+/dev/block/by-name/misc            u:object_r:misc_dev_block:s0
+/dev/block/by-name/modem_om        u:object_r:mke2fs_blkdev:s0
+/dev/block/by-name/modemnvm_img    u:object_r:mke2fs_blkdev:s0
+/dev/block/by-name/oeminfo         u:object_r:oeminfo_nvm_device:s0
+/dev/block/by-name/splash2         u:object_r:splash2_block_device:s0
+/dev/block/by-name/userdata        u:object_r:userdata_block_device:s0
+/dev/dsm                           u:object_r:dmd_device:s0
+/dev/hw_bfm                        u:object_r:bfmr_device:s0
+/dev/hwlog_dubai                   u:object_r:dubai_log_device:s0
+/dev/hwlog_exception               u:object_r:exception_device:s0
+/dev/hwlog_jank                    u:object_r:jank_device:s0
+/dev/nve0                          u:object_r:recovery_device:s0
+/dev/pmom                          u:object_r:pmom_device:s0
+/dev/ttyAMA0                       u:object_r:irda_device:s0
+/dev/ttyHwGS2                      u:object_r:recovery_device:s0
+
+# Sys files
+/sys/devices/platform/fingerprint(/.*)?    u:object_r:sysfs_fingerprint:s0
+
+# Data files
+/data/cust_ver\.bin       u:object_r:cust_data_file:s0
+/data/custom\.bin         u:object_r:cust_data_file:s0
+/data/custom_cota\.bin    u:object_r:cust_data_file:s0
+/data/facapp(/.*)?        u:object_r:cust_data_file:s0
+/data/nfc(/.*)?           u:object_r:nfc_data_file:s0
+/data/product\.bin        u:object_r:cust_data_file:s0
+/data/test_nv\.bin        u:object_r:cust_data_file:s0
+/data/test_ver\.bin       u:object_r:cust_data_file:s0
+
+# Rootfs
+/cust(/.*)?            u:object_r:system_file:s0
+/hw_odm(/.*)?          u:object_r:rootfs:s0
+/mnt/hisee_fs(/.*)?    u:object_r:hisee_data_file:s0
+/modem_log(/.*)?       u:object_r:modem_log_file:s0
+/preload(/.*)?         u:object_r:system_file:s0
+/sec_storage(/.*)?     u:object_r:teecd_data_file:s0
+/splash2(/.*)?         u:object_r:splash2_data_file:s0
+/version(/.*)?         u:object_r:system_file:s0
+
+# Binaries
+/system/bin/bfm-ctl                                            u:object_r:bfm-ctl_exec:s0
+/system/bin/hw/lineage\.touch@1.0-service\.hi6250            u:object_r:shal_lineage_touch_default_exec:s0
+/system/bin/hw/lineage\.trust@1\.0-service                     u:object_r:shal_lineage_trust_default_exec:s0
+
+# Configs
+/system/etc/audio_policy_configuration.xml    u:object_r:vendor_configs_file:s0

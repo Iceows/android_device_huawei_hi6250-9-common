@@ -1,0 +1,22 @@
+# Allow init to mount block devices
+allow init {
+    hisee_data_file
+    splash2_data_file
+}:dir mounton;
+
+allow init {
+    hisee_data_file
+    splash2_data_file
+}:filesystem { getattr mount relabelfrom relabelto };
+
+allow {
+    hisee_data_file
+    splash2_data_file
+} self:filesystem associate;
+
+# Allow init to mount vendor configs
+allow init vendor_configs_file:file mounton;
+allow init vendor_configs_file:dir mounton;
+
+# Allow init to load kernel modules
+allow init kernel:system module_request;
