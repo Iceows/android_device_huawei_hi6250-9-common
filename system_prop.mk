@@ -22,6 +22,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.bg_apps_limit=60
+    
+# IMS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.hw_emcom=true \
+    ro.config.hw_volte_dyn=true \
+    ro.config.hw_volte_on=true \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1
+
 
 # USB
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \

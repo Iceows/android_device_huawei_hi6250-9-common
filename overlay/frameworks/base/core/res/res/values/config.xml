@@ -223,4 +223,10 @@
     closed.  The default is 0. -->
     <integer name="config_lidNavigationAccessibility">1</integer>
 
+    <bool name="config_device_volte_available">true</bool>
+    <bool name="config_device_vt_available">true</bool>
+    <bool name="config_device_wfc_ims_available">true</bool>
+    
+    <bool name="config_dynamic_bind_ims">true</bool>
+    <string name="config_ims_package">com.huawei.ims</string>
 </resources>
