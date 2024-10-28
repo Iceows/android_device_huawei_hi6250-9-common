@@ -1,0 +1,8 @@
+
+allow radio default_hisi_hwservice:hwservice_manager find;
+
+allow radio odm_xml_file:dir { search open read getattr };
+
+typeattribute radio system_executes_vendor_violators;
+allow radio system_data_file:lnk_file r_file_perms;
+allow radio vendor_file:file rx_file_perms;
