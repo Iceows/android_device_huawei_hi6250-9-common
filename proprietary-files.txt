@@ -503,6 +503,16 @@ vendor/lib64/vendor.huawei.hardware.radio.deprecated@1.0.so
 vendor/lib64/vendor.huawei.hardware.radio.ims@1.0.so
 vendor/phone.prop
 
+# Wifi
+vendor/bin/hostapd_hisi
+vendor/bin/wpa_cli_hisi
+vendor/bin/wpa_supplicant_hisi
+vendor/lib64/libwifi_wapi_hisi.so
+vendor/lib64/vendor.huawei.hardware.wifi.supplicant@2.0.so
+vendor/lib64/vendor.huawei.hardware.wifi.supplicant@2.1.so
+vendor/lib64/vendor.huawei.hardware.wifi@1.0.so
+vendor/lib64/vendor.huawei.hardware.wifi@1.1.so
+
 # Sensors
 vendor/bin/hw/vendor.huawei.hardware.sensors@1.0-service
 vendor/etc/init/vendor.huawei.hardware.sensors@1.0-service.rc

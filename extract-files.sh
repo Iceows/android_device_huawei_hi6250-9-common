@@ -93,6 +93,9 @@ function blob_fixup() {
         vendor/etc/init/android.hardware.secure_element@1.0-service.rc)
             sed -i 's/android.hardware.secure_element@1.0-service/android.hardware.secure_element@1.0-service.hisi/g' "${2}"
             ;;
+        vendor/bin/hostapd_hisi)
+            "${PATCHELF}" --add-needed "libshim_binder.so" "${2}"
+            ;;
         vendor/etc/camera/*|odm/etc/camera/*)
             sed -i 's/gb2312/iso-8859-1/g' "${2}"
             sed -i 's/GB2312/iso-8859-1/g' "${2}"
