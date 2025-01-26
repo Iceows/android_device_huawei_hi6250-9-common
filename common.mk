@@ -232,11 +232,11 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.supplicant@1.1.vendor
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/hostapd_hisi.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/wifi/hostapd_hisi.conf \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/wifi/wpa_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_hisi.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/wifi/p2p_supplicant_hisi.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_hisi.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/wifi/wpa_supplicant_hisi.conf
+    $(LOCAL_PATH)/configs/wifi/hostapd_hisi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/hostapd_hisi.conf \
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_hisi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_hisi.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_hisi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_hisi.conf
 
 # Sensors
 PRODUCT_PACKAGES += \
