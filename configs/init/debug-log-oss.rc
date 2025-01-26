@@ -4,13 +4,12 @@
 on fs
     wait /dev/block/bootdevice/by-name/splash2
     start dump-logs
-    start teelogcat
     start debug-kernel
 
-on post-fs-data
+on post-fs
     start debug-kernel-2
 
-on  fs-data
+on post-fs-data
     start debug-kernel-3
         
 service dump-logs /system/bin/logcat -b all -f /splash2/logcat-normal.txt -v threadtime
@@ -18,13 +17,7 @@ service dump-logs /system/bin/logcat -b all -f /splash2/logcat-normal.txt -v thr
     user root
     group system
     disabled
-	
-service teelogcat /vendor/bin/tlogcat > /splash2/tlogcat.txt
-    class late_start
-    user root
-    group system
-    seclabel u:r:tlogcat:s0
-	
+
 service debug-properties /system/bin/sh -c "getprop > /splash2/debug.properties.txt"
     class main
     user root
