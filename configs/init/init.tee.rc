@@ -18,13 +18,6 @@ service teecd /vendor/bin/teecd
     disabled
     seclabel u:r:tee:s0
 
-service teelogcat /vendor/bin/tlogcat -f
-    class late_start
-    user root
-    group system
-    disabled
-    seclabel u:r:teelogcat:s0
-
 # TEE set sec_storage_data can be access by teecd to store fingerprint infos
 on fs
     mkdir /data/sec_storage_data 0700 system system encryption=None
