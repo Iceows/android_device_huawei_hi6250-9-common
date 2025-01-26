@@ -507,11 +507,19 @@ vendor/phone.prop
 vendor/bin/hostapd_hisi
 vendor/bin/wpa_cli_hisi
 vendor/bin/wpa_supplicant_hisi
+vendor/lib64/libhwwifi-hal.so
 vendor/lib64/libwifi_wapi_hisi.so
+vendor/lib64/libwifi_ext.default.so
 vendor/lib64/vendor.huawei.hardware.wifi.supplicant@2.0.so
 vendor/lib64/vendor.huawei.hardware.wifi.supplicant@2.1.so
 vendor/lib64/vendor.huawei.hardware.wifi@1.0.so
 vendor/lib64/vendor.huawei.hardware.wifi@1.1.so
+
+# WIFI service Huawei
+# Perhaps you can also build from source https://github.com/LineageOS/android_hardware_mediatek/blob/lineage-21/libwifi-hal-wrapper/libwifi-hal.cpp
+vendor/bin/hw/vendor.huawei.hardware.wifi@1.1-service
+vendor/etc/init/vendor.huawei.hardware.wifi@1.1-service.rc
+vendor/lib64/hw/vendor.huawei.hardware.wifi@1.1-impl.so
 
 # Sensors
 vendor/bin/hw/vendor.huawei.hardware.sensors@1.0-service
