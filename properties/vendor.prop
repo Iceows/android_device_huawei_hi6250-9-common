@@ -95,12 +95,6 @@ ro.sf.disable_triple_buffer=1
 ro.config.callinwifi=200,6
 ro.config.hw_volte_on=true
 
-persist.dbg.ims_volte_enable=1
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
-
-
 # IR
 config.disable_consumerir=true
 
