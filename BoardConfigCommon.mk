@@ -151,5 +151,7 @@ BOARD_HOSTAPD_DRIVER		:= NL80211
 CONFIG_DRIVER_NL80211		:= y
 endif
 
+# Inherit the proprietary files
+include vendor/huawei/hi6250-9-common/BoardConfigVendor.mk
 
 
