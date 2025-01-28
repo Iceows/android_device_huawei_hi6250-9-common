@@ -388,3 +388,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libpn551_fw
 
+# IMS Huawei by Iceows
+PRODUCT_PACKAGES += \
+    HuaweiIMS
+
