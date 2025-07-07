@@ -109,7 +109,7 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FMApp2-Hisi \
+    HwFMApp2 \
     hisi.fmradio
 
 # Folio
